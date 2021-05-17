@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Huawei Regular";
+  src: local("Huawei Regular"), local("Huawei-Regular"),
+    url("../fonts/HuaweiFont-Regular.woff2") format("woff2"),
+    url("../fonts/HuaweiFont-Regular.woff") format("woff"),
+    url("../fonts/HuaweiFont-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Huawei Medium";
+  src: local("Huawei Medium"), local("Huawei Medium"),
+    url("../fonts/HuaweiFont-Medium.woff2") format("woff2"),
+    url("../fonts/HuaweiFont-Medium.woff") format("woff"),
+    url("../fonts/HuaweiFont-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Huawei Bold";
+  src: local("Huawei Bold"), local("Huawei-Bold"),
+    url("../fonts/HuaweiFont-Bold.woff2") format("woff2"),
+    url("../fonts/HuaweiFont-Bold.woff") format("woff"),
+    url("../fonts/HuaweiFont-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}

@@ -1,0 +1,31 @@
+.container {
+  max-width: 1530px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  &_small {
+    max-width: 1230px;
+  }
+}
+.title {
+  font-family: "Huawei Bold", sans-serif;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 84px;
+  color: #fff;
+}
+.subtitle {
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+.text {
+  &-red {
+    color: #e4051c;
+  }
+  &-bold {
+    font-weight: bold;
+  }
+}
