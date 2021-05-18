@@ -22,12 +22,23 @@
               <span class="text-bold">4 годин</span> автономності
             </p>
           </div>
-          <div class="feature__item feature__item-center">
+          <div
+            ref="slideColor"
+            class="feature__item feature__item-center feature-white"
+          >
             <img
               class="feature__line-left-top"
               src="../assets/images/line-left_top.png"
               alt="line"
             />
+            <div class="feature__line-left"></div>
+            <img
+              class="feature__line-right-top"
+              src="../assets/images/line-right_top.png"
+              alt="line"
+            />
+            <div class="feature__line-right"></div>
+            <div class="feature__line-bottom"></div>
           </div>
           <div class="feature__item feature__item-right">
             <p class="text-bold">Легкість</p>
@@ -64,6 +75,29 @@
           </div>
         </div>
       </div>
+      <div class="change-color">
+        <div class="change-color__item">
+          <div
+            @click="changeColor('feature-black')"
+            class="change-color__bullet"
+          ></div>
+          <p class="change-color__text">Carbon Black</p>
+        </div>
+        <div class="change-color__item change-color__item-center">
+          <div
+            @click="changeColor('feature-red')"
+            class="change-color__bullet change-color__bullet_red"
+          ></div>
+          <p class="change-color__text">Red Edition</p>
+        </div>
+        <div class="change-color__item">
+          <div
+            @click="changeColor('feature-white')"
+            class="change-color__bullet change-color__bullet_white"
+          ></div>
+          <p class="change-color__text">Ceramic White</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -74,6 +108,18 @@ export default {
   name: "Description",
   components: {
     Test,
+  },
+  methods: {
+    changeColor(prop) {
+      if (this.$refs.slideColor.classList.contains("feature-white")) {
+        this.$refs.slideColor.classList.remove("feature-white");
+      } else if (this.$refs.slideColor.classList.contains("feature-black")) {
+        this.$refs.slideColor.classList.remove("feature-black");
+      } else {
+        this.$refs.slideColor.classList.remove("feature-red");
+      }
+      this.$refs.slideColor.classList.add(`${prop}`);
+    },
   },
 };
 </script>
@@ -93,6 +139,15 @@ export default {
 }
 .feature {
   margin-bottom: 85px;
+  &-black {
+    background: url("../assets/images/huawei_black.png") no-repeat;
+  }
+  &-red {
+    background: url("../assets/images/huawei_red.png") no-repeat;
+  }
+  &-white {
+    background: url("../assets/images/huawei_white.png") no-repeat;
+  }
   &__row {
     display: flex;
     &-bottom {
@@ -110,7 +165,7 @@ export default {
     justify-content: center;
     &-left {
       text-align: right;
-      padding-right: 30px;
+      padding-right: 40px;
       p:nth-child(2) {
         max-width: 385px;
         margin-bottom: 30px;
@@ -120,12 +175,14 @@ export default {
       }
     }
     &-center {
-      background: url("../assets/images/huawei_white.png") no-repeat;
-      //   background-position: center 40px;
       position: relative;
     }
+
     &-right {
       align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 90px;
+      padding-left: 20px;
 
       p:nth-child(2),
       p:nth-child(4) {
@@ -144,6 +201,53 @@ export default {
       top: 105px;
       left: -20px;
     }
+    &-left {
+      position: absolute;
+      top: 305px;
+      left: -20px;
+      width: 85px;
+      background: #8f8f8f;
+      height: 2px;
+    }
+    &-right-top {
+      position: absolute;
+      right: 5px;
+      top: 105px;
+    }
+    &-right {
+      position: absolute;
+      top: 240px;
+      right: 5px;
+      width: 50px;
+      background: #8f8f8f;
+      height: 2px;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 98px;
+        right: 0;
+        width: 75px;
+        background: #8f8f8f;
+        height: 2px;
+      }
+    }
+    &-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 172px;
+      width: 2px;
+      background: #8f8f8f;
+      height: 135px;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 138px;
+        width: 2px;
+        background: #8f8f8f;
+        height: 135px;
+      }
+    }
   }
   &__bottom {
     justify-content: flex-start;
@@ -158,6 +262,46 @@ export default {
       text-align: left;
       justify-content: flex-start;
     }
+  }
+}
+.change-color {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 65px;
+  &__item {
+    max-width: 165px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &:nth-child(2) {
+      align-items: center;
+    }
+    &:nth-child(3) {
+      align-items: flex-start;
+    }
+    &-center {
+      margin: 0 65px;
+    }
+  }
+  &__bullet {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(180deg, #4a4b4d 0%, #0b0b0b 100%);
+    border-radius: 50%;
+    margin-bottom: 24px;
+    cursor: pointer;
+    &_red {
+      background: linear-gradient(180deg, #b2252d 0%, #a40c15 100%);
+    }
+    &_white {
+      background: linear-gradient(180deg, #f4f5f9 0%, #e8e9ec 100%);
+    }
+  }
+  &__text {
+    font-size: 24px;
+    line-height: 28px;
+    color: #000;
   }
 }
 </style>

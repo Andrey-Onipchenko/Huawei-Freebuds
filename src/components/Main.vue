@@ -15,7 +15,7 @@
         Давай разом з Huawei Freebuds 4i перевіримо, наскільки добре ти
         розбираєшся у звучанні різних міст України.
       </p>
-      <a class="main__link" href="#">Перевірити себе</a>
+      <a class="main__link" href="#testScroll">Перевірити себе</a>
     </div>
     <div class="steap">
       <div class="steap__item">
@@ -72,7 +72,7 @@ export default {};
     line-height: 21px;
     color: #fff;
     margin-bottom: 15px;
-    max-width: 515px;
+    max-width: 493px;
     &:nth-last-child(2) {
       margin-bottom: 30px;
     }
