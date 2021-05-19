@@ -226,12 +226,24 @@ export default {
   position: relative;
   &-black {
     background: url("../assets/images/huawei_black.png") no-repeat;
+    @media (max-width: 1366px) {
+      background-position: center center;
+      background-size: contain;
+    }
   }
   &-red {
     background: url("../assets/images/huawei_red.png") no-repeat;
+    @media (max-width: 1366px) {
+      background-position: center center;
+      background-size: contain;
+    }
   }
   &-white {
     background: url("../assets/images/huawei_white.png") no-repeat;
+    @media (max-width: 1366px) {
+      background-position: center;
+      background-size: contain;
+    }
   }
   &__row {
     display: flex;
@@ -251,6 +263,10 @@ export default {
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
+    @media (max-width: 1366px) {
+      font-size: 18px;
+      height: 440px;
+    }
     @media (max-width: 1024px) {
       height: 445px;
     }
@@ -263,6 +279,9 @@ export default {
       }
       p:nth-child(4) {
         max-width: 265px;
+        @media (max-width: 1366px) {
+          max-width: 340px;
+        }
       }
       @media (max-width: 1024px) {
         display: none;
@@ -287,9 +306,19 @@ export default {
         max-width: 240px;
         margin-bottom: 50px;
         width: 100%;
+        @media (max-width: 1366px) {
+          max-width: 270px;
+        }
       }
       p:nth-child(4) {
         margin-bottom: 15px;
+      }
+      @media (max-width: 1440px) {
+        padding-left: 40px;
+      }
+      @media (max-width: 1366px) {
+        padding-left: 0;
+        padding-top: 80px;
       }
       @media (max-width: 1024px) {
         display: none;
@@ -304,6 +333,11 @@ export default {
       background: url("../assets/images/line-left_top.png") center no-repeat;
       width: 340px;
       height: 55px;
+      @media (max-width: 1366px) {
+        top: 90px;
+        width: 300px;
+        background-size: contain;
+      }
       @media (max-width: 1024px) {
         width: 30px;
         height: 30px;
@@ -334,6 +368,10 @@ export default {
       width: 85px;
       background: #8f8f8f;
       height: 2px;
+      @media (max-width: 1366px) {
+        top: 265px;
+        width: 120px;
+      }
       @media (max-width: 1024px) {
         width: 30px;
         height: 30px;
@@ -344,11 +382,18 @@ export default {
     }
     &-right-top {
       position: absolute;
-      right: 5px;
+      left: 395px;
       top: 105px;
       background: url("../assets/images/line-right_top.png") center no-repeat;
       width: 90px;
       height: 55px;
+      @media (max-width: 1366px) {
+        left: 345px;
+        top: 93px;
+        background-size: contain;
+        width: 65px;
+        height: 40px;
+      }
       @media (max-width: 1024px) {
         width: 30px;
         height: 30px;
@@ -361,10 +406,11 @@ export default {
     &-right-center {
       position: absolute;
       top: 240px;
-      right: 5px;
+      left: 440px;
       width: 50px;
       background: #8f8f8f;
       height: 2px;
+
       @media (max-width: 1024px) {
         width: 30px;
         height: 30px;
@@ -376,7 +422,7 @@ export default {
     &-right-bottom {
       position: absolute;
       top: 337px;
-      right: 0;
+      left: 415px;
       width: 75px;
       background: #8f8f8f;
       height: 2px;
