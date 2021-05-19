@@ -52,6 +52,7 @@ export default {};
 <style lang="scss" scoped>
 .logo {
   margin: 40px 0 46px;
+  max-width:215px;
   @media (max-width: 1600px) {
     margin: 20px 0;
   }
