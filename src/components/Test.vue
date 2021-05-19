@@ -238,15 +238,10 @@ export default {
             this.slide = this.slideSeven;
             break;
           case 8:
-            if (this.result >= 0 && this.result <= 10) {
-              this.$router.push("resultOne");
-            } else if (this.result >= 20 && this.result <= 30) {
-              this.$router.push("resultTwo");
-            } else if (this.result >= 40 && this.result <= 50) {
-              this.$router.push("resultThree");
-            } else if (this.result >= 60 && this.result <= 70) {
-              this.$router.push("resultFour");
-            }
+            this.$router.push({
+              path: "result",
+              query: { count: this.result },
+            });
             break;
         }
         slide.style.opacity = "1";
@@ -274,7 +269,7 @@ export default {
   &__control {
     width: 80px;
     height: 80px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     cursor: pointer;
   }
   &__play {

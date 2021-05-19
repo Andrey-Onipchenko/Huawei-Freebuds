@@ -26,19 +26,41 @@
             ref="slideColor"
             class="feature__item feature__item-center feature-white"
           >
-            <img
+            <div
               class="feature__line-left-top"
-              src="../assets/images/line-left_top.png"
-              alt="line"
-            />
-            <div class="feature__line-left"></div>
-            <img
+              @click="featureOpen('leftTop')"
+            ></div>
+            <div
+              class="feature__line-left-top-mobile"
+              @click="featureOpen('leftTop')"
+            ></div>
+
+            <div
+              class="feature__line-left-center"
+              @click="featureOpen('leftCenter')"
+            ></div>
+
+            <div
               class="feature__line-right-top"
-              src="../assets/images/line-right_top.png"
-              alt="line"
-            />
-            <div class="feature__line-right"></div>
-            <div class="feature__line-bottom"></div>
+              @click="featureOpen('rightTop')"
+            ></div>
+            <div
+              class="feature__line-right-center"
+              @click="featureOpen('rightCenter')"
+            ></div>
+            <div
+              class="feature__line-right-bottom"
+              @click="featureOpen('rightBottom')"
+            ></div>
+
+            <div
+              class="feature__line-bottom"
+              @click="featureOpen('bottomRight')"
+            ></div>
+            <div
+              class="feature__line-bottom-left"
+              @click="featureOpen('bottomLeft')"
+            ></div>
           </div>
           <div class="feature__item feature__item-right">
             <p class="text-bold">Легкість</p>
@@ -74,6 +96,21 @@
             </p>
           </div>
         </div>
+        <div
+          class="feature-popup"
+          :class="isOpenFeature && 'feature-popup__open'"
+        >
+          <div class="feature-popup__wrap">
+            <button
+              class="feature-popup__close"
+              @click="featureClose()"
+            ></button>
+            <h4 class="feature-popup__title">{{ featureOut.title }}</h4>
+            <p class="feature-popup__text">
+              {{ featureOut.text }}
+            </p>
+          </div>
+        </div>
       </div>
       <div class="change-color">
         <div class="change-color__item">
@@ -106,6 +143,46 @@
 import Test from "@/components/Test.vue";
 export default {
   name: "Description",
+  data() {
+    return {
+      isOpenFeature: false,
+      featureOut: { title: "title", text: "text" },
+      featuredata: {
+        leftTop: {
+          title: "Активне приглушення шуму",
+          text:
+            "Датчики у навушниках активно визначають та компенсують шум середовища. Де б ви не були, ви завжди можете зануритися в улюблену музику",
+        },
+        leftCenter: {
+          title: "Висока автономність",
+          text:
+            "Повний заряд: 10 годин прослуховування музики 10 хвилин заряджання для 4 годин автономності",
+        },
+        rightTop: {
+          title: "Легкість",
+          text: "Зменшення тиску на ваші вуха",
+        },
+        rightCenter: {
+          title: "Ергономічна форма",
+          text: "Ідеально поміщається у долоні",
+        },
+        rightBottom: {
+          title: "Естетика",
+          text: "Пласка поверхня кейсу",
+        },
+        bottomRight: {
+          title: "Дизайн",
+          text:
+            "Компактний чохол-акумулятор має оригінальний дизайн і гладеньку поверхню. Плавні обриси і дзеркальне полірування навушників надають вам сучасного та непересічного вигляду. Керамічно-білі, вугільно-чорні чи червоні — вони наповнять ваші дні та ночі стилем.",
+        },
+        bottomLeft: {
+          title: "Автоматичне підключення до смартфону",
+          text:
+            "Просто відкрийте чохол-акумулятор, і на вашому смартфоні або планшеті з’явиться пропозиція встановити зв’язок з HUAWEI FreeBuds 4i.8 Зробіть це, і надалі навушники будуть автоматично підключатися до вашого пристрою, коли ви відкриваєте чохол.",
+        },
+      },
+    };
+  },
   components: {
     Test,
   },
@@ -119,6 +196,13 @@ export default {
         this.$refs.slideColor.classList.remove("feature-red");
       }
       this.$refs.slideColor.classList.add(`${prop}`);
+    },
+    featureOpen(feature) {
+      this.featureOut = this.featuredata[feature];
+      this.isOpenFeature = true;
+    },
+    featureClose() {
+      this.isOpenFeature = false;
     },
   },
 };
@@ -139,6 +223,7 @@ export default {
 }
 .feature {
   margin-bottom: 85px;
+  position: relative;
   &-black {
     background: url("../assets/images/huawei_black.png") no-repeat;
   }
@@ -152,6 +237,9 @@ export default {
     display: flex;
     &-bottom {
       justify-content: center;
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
   }
   &__item {
@@ -163,6 +251,9 @@ export default {
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
+    @media (max-width: 1024px) {
+      height: 445px;
+    }
     &-left {
       text-align: right;
       padding-right: 40px;
@@ -173,9 +264,16 @@ export default {
       p:nth-child(4) {
         max-width: 265px;
       }
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
     &-center {
       position: relative;
+      @media (max-width: 1024px) {
+        width: 500px;
+        margin: 0 auto;
+      }
     }
 
     &-right {
@@ -193,6 +291,9 @@ export default {
       p:nth-child(4) {
         margin-bottom: 15px;
       }
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
   }
   &__line {
@@ -200,35 +301,92 @@ export default {
       position: absolute;
       top: 105px;
       left: -20px;
+      background: url("../assets/images/line-left_top.png") center no-repeat;
+      width: 340px;
+      height: 55px;
+      @media (max-width: 1024px) {
+        width: 30px;
+        height: 30px;
+        background: url("../assets/images/circle.svg") center no-repeat;
+        background-size: contain;
+        top: 152px;
+        right: auto;
+        left: 135px;
+      }
+      &-mobile {
+        display: none;
+        @media (max-width: 1024px) {
+          display: block;
+          position: absolute;
+          top: 155px;
+          right: 170px;
+          width: 30px;
+          height: 30px;
+          background: url("../assets/images/circle.svg") center no-repeat;
+          background-size: contain;
+        }
+      }
     }
-    &-left {
+    &-left-center {
       position: absolute;
       top: 305px;
       left: -20px;
       width: 85px;
       background: #8f8f8f;
       height: 2px;
+      @media (max-width: 1024px) {
+        width: 30px;
+        height: 30px;
+        background: url("../assets/images/circle.svg") center no-repeat;
+        background-size: contain;
+        left: 50px;
+      }
     }
     &-right-top {
       position: absolute;
       right: 5px;
       top: 105px;
+      background: url("../assets/images/line-right_top.png") center no-repeat;
+      width: 90px;
+      height: 55px;
+      @media (max-width: 1024px) {
+        width: 30px;
+        height: 30px;
+        background: url("../assets/images/circle.svg") center no-repeat;
+        background-size: contain;
+        right: 75px;
+        top: 90px;
+      }
     }
-    &-right {
+    &-right-center {
       position: absolute;
       top: 240px;
       right: 5px;
       width: 50px;
       background: #8f8f8f;
       height: 2px;
-      &::after {
-        content: "";
-        position: absolute;
-        top: 98px;
-        right: 0;
-        width: 75px;
-        background: #8f8f8f;
-        height: 2px;
+      @media (max-width: 1024px) {
+        width: 30px;
+        height: 30px;
+        background: url("../assets/images/circle.svg") center no-repeat;
+        background-size: contain;
+        right: 55px;
+      }
+    }
+    &-right-bottom {
+      position: absolute;
+      top: 337px;
+      right: 0;
+      width: 75px;
+      background: #8f8f8f;
+      height: 2px;
+      @media (max-width: 1024px) {
+        width: 30px;
+        height: 30px;
+        background: url("../assets/images/circle.svg") center no-repeat;
+        background-size: contain;
+        top: 325px;
+        right: 85px;
       }
     }
     &-bottom {
@@ -238,6 +396,14 @@ export default {
       width: 2px;
       background: #8f8f8f;
       height: 135px;
+      @media (max-width: 1024px) {
+        width: 30px;
+        height: 30px;
+        background: url("../assets/images/circle.svg") center no-repeat;
+        background-size: contain;
+        bottom: 40px;
+        left: 150px;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -246,6 +412,22 @@ export default {
         width: 2px;
         background: #8f8f8f;
         height: 135px;
+        @media (max-width: 1024px) {
+          content: none;
+        }
+      }
+      &-left {
+        display: none;
+        @media (max-width: 1024px) {
+          display: block;
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          background: url("../assets/images/circle.svg") center no-repeat;
+          background-size: contain;
+          bottom: 40px;
+          left: 310px;
+        }
       }
     }
   }
@@ -262,6 +444,29 @@ export default {
       text-align: left;
       justify-content: flex-start;
     }
+  }
+}
+.feature-popup {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #fff;
+  max-width: 400px;
+  padding: 50px 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  display: none;
+  &__open {
+    display: block;
+  }
+  &__close {
+    width: 32px;
+    height: 32px;
+    background: url("../assets/images/close.svg");
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
 }
 .change-color {

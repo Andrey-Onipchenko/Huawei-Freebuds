@@ -8,9 +8,9 @@ const routes = [
     component: Home,
   },
   {
-    path: "/resultOne",
-    name: "ResultOne",
-    component: () => import("../views/ResultOne.vue"),
+    path: "/result",
+    name: "Result",
+    component: () => import("../views/Result.vue"),
   },
 ];
 

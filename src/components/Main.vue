@@ -52,10 +52,13 @@ export default {};
 <style lang="scss" scoped>
 .logo {
   margin: 40px 0 46px;
+  @media (max-width: 1600px) {
+    margin: 20px 0;
+  }
 }
 .main {
   width: calc(100vw - 17px);
-  height: 680px;
+  height: 80vh;
   background: url("../assets/images/main_bg.png") center no-repeat;
   background-size: cover;
   position: relative;
@@ -75,6 +78,9 @@ export default {};
     max-width: 493px;
     &:nth-last-child(2) {
       margin-bottom: 30px;
+      @media (max-width: 1600px) {
+        margin-bottom: 15px;
+      }
     }
   }
   &__link {
@@ -92,7 +98,6 @@ export default {};
       content: "";
       position: absolute;
       background: url("../assets/images/link_test.png") center no-repeat;
-      //   background-size: contain;
       width: 69px;
       height: 77px;
       right: 10px;
@@ -102,22 +107,30 @@ export default {};
 }
 .steap {
   position: absolute;
-  width: 1500px;
+  max-width: 1500px;
+  width: 95%;
   height: 220px;
   left: 0;
   right: 0;
   margin: 0 auto;
   bottom: -150px;
-  background: #ffffff;
+  background: #fff;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 1600px) {
+    height: 160px;
+    bottom: -115px;
+  }
   &__item {
     height: 135px;
     max-width: 260px;
     text-align: center;
     font-family: "Huawei Bold", sans-serif;
+    @media (max-width: 1600px) {
+      height: 130px;
+    }
   }
   &__title {
     font-weight: bold;
@@ -127,6 +140,10 @@ export default {};
     text-transform: uppercase;
     color: #a41621;
     margin-bottom: 14px;
+    @media (max-width: 1600px) {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
   }
   &__text {
     font-weight: bold;
