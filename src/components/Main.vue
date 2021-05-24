@@ -63,6 +63,10 @@ export default {};
   background: url("../assets/images/main_bg.png") center no-repeat;
   background-size: cover;
   position: relative;
+  @media (max-width: 1024px) {
+    width: 100vw;
+    height: 50vh;
+  }
   &__test {
     font-family: "Huawei Bold", sans-serif;
     font-weight: bold;
@@ -123,6 +127,12 @@ export default {};
   @media (max-width: 1600px) {
     height: 160px;
     bottom: -115px;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: 100%;
+    padding: 15px 0;
+    bottom: -470px;
   }
   &__item {
     height: 135px;

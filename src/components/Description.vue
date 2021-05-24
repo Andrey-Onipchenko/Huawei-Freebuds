@@ -78,8 +78,8 @@
               Дизайн Компактний чохол-акумулятор має оригінальний дизайн і
               гладеньку поверхню. Плавні обриси і дзеркальне полірування
               навушників надають вам сучасного та непересічного вигляду.
-              Керамічно-білі, вугільно-чорні чи червоні <br />
-              — вони наповнять ваші дні та ночі стилем.
+              Керамічно-білі, вугільно-чорні чи червоні — вони наповнять ваші
+              дні та ночі стилем.
             </p>
           </div>
           <div class="feature__item feature__bottom-right">
@@ -213,17 +213,29 @@ export default {
   overflow: hidden;
   padding-top: 200px;
   background: url("../assets/images/notes.png") center no-repeat;
+  @media (max-width: 768px) {
+    padding-top: 500px;
+  }
   &__title {
     font-weight: normal;
     font-size: 64px;
     line-height: 75px;
     text-align: center;
     color: #000000;
+    @media (max-width: 1366px) {
+      font-size: 58px;
+    }
   }
 }
 .feature {
   margin-bottom: 85px;
   position: relative;
+  @media (max-width: 1366px) {
+    margin: -30px 0 0;
+  }
+  @media (max-width: 1024px) {
+    margin: 0;
+  }
   &-black {
     background: url("../assets/images/huawei_black.png") no-repeat;
     @media (max-width: 1366px) {
@@ -249,6 +261,10 @@ export default {
     display: flex;
     &-bottom {
       justify-content: center;
+      @media (max-width: 1366px) {
+        justify-content: space-around;
+        margin: -80px 0 10px;
+      }
       @media (max-width: 1024px) {
         display: none;
       }
@@ -264,15 +280,19 @@ export default {
     align-items: flex-end;
     justify-content: center;
     @media (max-width: 1366px) {
-      font-size: 18px;
+      font-size: 16px;
       height: 440px;
     }
     @media (max-width: 1024px) {
-      height: 445px;
+      height: 520px;
     }
     &-left {
       text-align: right;
       padding-right: 40px;
+      @media (max-width: 1366px) {
+        justify-content: flex-start;
+        padding-top: 80px;
+      }
       p:nth-child(2) {
         max-width: 385px;
         margin-bottom: 30px;
@@ -343,17 +363,17 @@ export default {
         height: 30px;
         background: url("../assets/images/circle.svg") center no-repeat;
         background-size: contain;
-        top: 152px;
+        top: 150px;
         right: auto;
-        left: 135px;
+        left: 155px;
       }
       &-mobile {
         display: none;
         @media (max-width: 1024px) {
           display: block;
           position: absolute;
-          top: 155px;
-          right: 170px;
+          top: 150px;
+          right: 160px;
           width: 30px;
           height: 30px;
           background: url("../assets/images/circle.svg") center no-repeat;
@@ -369,7 +389,7 @@ export default {
       background: #8f8f8f;
       height: 2px;
       @media (max-width: 1366px) {
-        top: 265px;
+        top: 237px;
         width: 120px;
       }
       @media (max-width: 1024px) {
@@ -377,7 +397,8 @@ export default {
         height: 30px;
         background: url("../assets/images/circle.svg") center no-repeat;
         background-size: contain;
-        left: 50px;
+        left: 70px;
+        top: 280px;
       }
     }
     &-right-top {
@@ -391,8 +412,8 @@ export default {
         left: 345px;
         top: 93px;
         background-size: contain;
-        width: 65px;
-        height: 40px;
+        width: 80px;
+        height: 50px;
       }
       @media (max-width: 1024px) {
         width: 30px;
@@ -400,7 +421,8 @@ export default {
         background: url("../assets/images/circle.svg") center no-repeat;
         background-size: contain;
         right: 75px;
-        top: 90px;
+        top: 85px;
+        left: 395px;
       }
     }
     &-right-center {
@@ -411,12 +433,19 @@ export default {
       background: #8f8f8f;
       height: 2px;
 
+      @media (max-width: 1366px) {
+        top: 200px;
+        left: 380px;
+        width: 40px;
+      }
       @media (max-width: 1024px) {
         width: 30px;
         height: 30px;
         background: url("../assets/images/circle.svg") center no-repeat;
         background-size: contain;
         right: 55px;
+        top: 235px;
+        left: 410px;
       }
     }
     &-right-bottom {
@@ -426,12 +455,18 @@ export default {
       width: 75px;
       background: #8f8f8f;
       height: 2px;
+      @media (max-width: 1366px) {
+        top: 270px;
+        left: 360px;
+        width: 60px;
+      }
       @media (max-width: 1024px) {
         width: 30px;
         height: 30px;
         background: url("../assets/images/circle.svg") center no-repeat;
         background-size: contain;
-        top: 325px;
+        top: 310px;
+        left: 380px;
         right: 85px;
       }
     }
@@ -442,12 +477,16 @@ export default {
       width: 2px;
       background: #8f8f8f;
       height: 135px;
+      @media (max-width: 1366px) {
+        height: 35px;
+        bottom: 80px;
+      }
       @media (max-width: 1024px) {
         width: 30px;
         height: 30px;
         background: url("../assets/images/circle.svg") center no-repeat;
         background-size: contain;
-        bottom: 40px;
+        bottom: 142px;
         left: 150px;
       }
       &::before {
@@ -458,12 +497,17 @@ export default {
         width: 2px;
         background: #8f8f8f;
         height: 135px;
+        @media (max-width: 1366px) {
+          height: 35px;
+          left: 105px;
+        }
         @media (max-width: 1024px) {
           content: none;
         }
       }
       &-left {
         display: none;
+
         @media (max-width: 1024px) {
           display: block;
           position: absolute;
@@ -471,7 +515,7 @@ export default {
           height: 30px;
           background: url("../assets/images/circle.svg") center no-repeat;
           background-size: contain;
-          bottom: 40px;
+          bottom: 140px;
           left: 310px;
         }
       }
@@ -479,16 +523,26 @@ export default {
   }
   &__bottom {
     justify-content: flex-start;
+
     &-left {
       height: auto;
       text-align: right;
       max-width: 465px;
       margin-right: 65px;
+      @media (max-width: 1366px) {
+        max-width: 45%;
+        width: 100%;
+        margin-right: 0;
+      }
     }
     &-right {
       height: auto;
       text-align: left;
       justify-content: flex-start;
+      @media (max-width: 1366px) {
+        max-width: 45%;
+        width: 100%;
+      }
     }
   }
 }
@@ -519,6 +573,11 @@ export default {
   display: flex;
   justify-content: center;
   margin-bottom: 65px;
+  @media (max-width: 1024px) {
+    margin-top: -50px;
+    position: relative;
+    z-index: 1;
+  }
   &__item {
     max-width: 165px;
     width: 100%;
@@ -542,6 +601,16 @@ export default {
     border-radius: 50%;
     margin-bottom: 24px;
     cursor: pointer;
+    @media (max-width: 1366px) {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 5px;
+    }
+    @media (max-width: 1024px) {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+    }
     &_red {
       background: linear-gradient(180deg, #b2252d 0%, #a40c15 100%);
     }
@@ -553,6 +622,14 @@ export default {
     font-size: 24px;
     line-height: 28px;
     color: #000;
+    @media (max-width: 1366px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+    @media (max-width: 1024px) {
+      font-size: 24px;
+      line-height: 28px;
+    }
   }
 }
 </style>

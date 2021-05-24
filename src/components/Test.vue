@@ -259,9 +259,13 @@ export default {
   margin-bottom: 150px;
   padding-top: 230px;
   overflow: hidden;
-  // @media (max-height: 629px) {
-  //   height: 90vh;
-  // }
+  @media (max-height: 1366px) {
+    margin-bottom: 80px;
+  }
+  @media (max-width: 768px) {
+    background-position: center;
+    padding-top: 180px;
+  }
 }
 .slide {
   width: 100%;
