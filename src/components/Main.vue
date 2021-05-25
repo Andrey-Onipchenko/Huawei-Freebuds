@@ -135,6 +135,7 @@ export default {};
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 1;
   @media (max-width: 1600px) {
     height: 160px;
     bottom: -115px;
