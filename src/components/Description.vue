@@ -1,5 +1,6 @@
 <template>
-  <div class="description">
+  <div class="description" @mousemove="bg($event)" ref="description">
+    <div class="description__bg" ref="descriptionBg"></div>
     <div class="container">
       <Test />
       <h2 class="description__title">
@@ -204,6 +205,13 @@ export default {
     featureClose() {
       this.isOpenFeature = false;
     },
+    bg(event) {
+      let containerWidth = this.$refs.descriptionBg.clientWidth,
+        containerHeight = this.$refs.descriptionBg.clientHeight,
+        mousePositionX = (event.pageX / containerWidth) * 100,
+        mousePositionY = (event.pageY / containerHeight) * 100;
+      this.$refs.descriptionBg.style.backgroundPosition = `${mousePositionX}% ${mousePositionY}%`;
+    },
   },
 };
 </script>
@@ -212,7 +220,15 @@ export default {
 .description {
   overflow: hidden;
   padding-top: 200px;
-  background: url("../assets/images/notes.png") center no-repeat;
+  position: relative;
+  &__bg {
+    width: 100%;
+    height: 1979px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../assets/images/notes.png") center no-repeat;
+  }
   @media (max-width: 768px) {
     padding-top: 500px;
   }
@@ -573,10 +589,10 @@ export default {
   display: flex;
   justify-content: center;
   margin-bottom: 65px;
+  position: relative;
+  z-index: 1;
   @media (max-width: 1024px) {
     margin-top: -50px;
-    position: relative;
-    z-index: 1;
   }
   &__item {
     max-width: 165px;

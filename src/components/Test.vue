@@ -259,6 +259,8 @@ export default {
   margin-bottom: 150px;
   padding-top: 230px;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
   @media (max-height: 1366px) {
     margin-bottom: 80px;
   }
@@ -278,6 +280,9 @@ export default {
   }
   &__play {
     background: url("../assets/images/play.png");
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+    animation: pulse-white 1s infinite;
   }
   &__pause {
     background: url("../assets/images/pause.svg");
@@ -349,21 +354,20 @@ export default {
     margin-bottom: 100px;
   }
 }
-// @keyframes bbb {
-//   0% {
-//     background: #3e8e4a;
-//   }
-//   25% {
-//     background: #fff;
-//   }
-//   50% {
-//     background: #3e8e4a;
-//   }
-//   75% {
-//     background: #fff;
-//   }
-//   100% {
-//     background: #3e8e4a;
-//   }
-// }
+@keyframes pulse-white {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
 </style>

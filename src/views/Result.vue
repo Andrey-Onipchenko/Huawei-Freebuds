@@ -5,7 +5,10 @@
         <img src="../assets/images/refresh.png" alt="refresh"
       /></router-link>
       <p class="result__text text-bold result__again">Пройти тест ще раз</p>
-      <h3 class="result__title text-bold">{{ answer }} вірних відповідей</h3>
+      <h3 class="result__title text-bold">
+        {{ answer }}
+        {{ answer === 1 ? "вірна відповідь" : "вірних відповідей" }}
+      </h3>
       <p class="result__text result__text-paragraf">
         {{ result.paragrafOne }}
       </p>

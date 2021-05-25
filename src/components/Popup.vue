@@ -61,7 +61,7 @@ export default {
       isOpen: false,
       userName: "",
       userPhone: "",
-      userCreated: "Надіслати зайвку",
+      userCreated: "Надіслати заявку",
       error: null,
       registrationSuccessfully: false,
     };
