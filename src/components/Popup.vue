@@ -10,31 +10,45 @@
         <p class="popup__enter-title">Ваше ім’я</p>
         <input
           class="popup__enter-input"
+          :class="registrationSuccessfully && 'popup__disabled'"
           v-model="userName"
           type="text"
           name="name"
+          :disabled="registrationSuccessfully"
         />
-        <p class="popup__enter-subtitle">Це поле обов’язкове</p>
+        <p class="popup__enter-subtitle" ref="inputName">Це поле обов’язкове</p>
       </div>
       <div class="popup__enter">
         <p class="popup__enter-title">Ваш номер:</p>
         <input
           class="popup__enter-input"
+          :class="registrationSuccessfully && 'popup__disabled'"
           v-model="userPhone"
           type="phone"
           name="phone"
           v-maska="'+38 (0##) ###-##-##'"
+          :disabled="registrationSuccessfully"
         />
-        <p class="popup__enter-subtitle">Це поле обов’язкове</p>
+        <p class="popup__enter-subtitle" ref="inputPhone">
+          Це поле обов’язкове
+        </p>
       </div>
-      <button class="popup__submit">
-        Надіслати зайвку
+      <button
+        class="popup__submit"
+        :class="registrationSuccessfully && 'popup__disabled'"
+        @click="sub()"
+        ref="submitBtn"
+        :disabled="registrationSuccessfully"
+      >
+        {{ userCreated }}
         <img
           class="popup__submit-img"
+          ref="submitImg"
           src="../assets/images/submit.svg"
           alt="submit"
         />
       </button>
+      <p class="popup__error">{{ error }}</p>
     </div>
   </div>
 </template>
@@ -47,28 +61,36 @@ export default {
       isOpen: false,
       userName: "",
       userPhone: "",
+      userCreated: "Надіслати зайвку",
+      error: null,
+      registrationSuccessfully: false,
     };
   },
   methods: {
     openPopup() {
       this.isOpen = true;
+      // this.userCreated = null;
     },
     closePopup() {
       this.isOpen = false;
     },
     sub() {
-      if (this.userPhone.length === 15 && this.userName.length > 0) {
+      if (this.userPhone.length === 19 && this.userName.length > 0) {
         axios
-          .post("https://back-sp.umh.com.ua/api/hutorok/easter/new", {
+          .post("https://back-sp.umh.com.ua/api/huawei/freebuds/new", {
             name: this.userName,
             phone: this.userPhone,
           })
           .then((response) => {
             if (response.status === 201) {
               this.userCreated = response.data.msg;
-              this.registration = false;
-              this.reg = true;
-              this.gtagRegistration();
+              this.$refs.submitBtn.style.color = "#fff";
+              this.$refs.submitBtn.style.background = "#3e8e4a";
+              this.$refs.submitImg.style.opacity = "1";
+              this.registrationSuccessfully = true;
+              // this.registration = false;
+              // this.reg = true;
+              // this.gtagRegistration();
             } else if (response.status === 200) {
               this.error = "Користувач з таким телефоном вже існує";
             } else if (response.status === 500) {
@@ -79,7 +101,12 @@ export default {
             console.log(error);
           });
       } else {
-        this.error = "Заповніть всі поля";
+        this.userName.length === 0
+          ? (this.$refs.inputName.style.color = "red")
+          : (this.$refs.inputName.style.color = "#d3d3d3");
+        this.userPhone.length < 19
+          ? (this.$refs.inputPhone.style.color = "red")
+          : (this.$refs.inputPhone.style.color = "#d3d3d3");
       }
     },
   },
@@ -97,7 +124,7 @@ export default {
   width: 100%;
   background: #fff;
   position: fixed;
-  padding: 55px 20px 30px;
+  padding: 55px 20px 20px;
   top: 50%;
   transform: translateY(-50%);
   right: -100%;
@@ -105,6 +132,12 @@ export default {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   transition: 500ms ease-in-out;
+  @media (max-width: 1600px) {
+    top: -120%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
   &__wrap {
     position: relative;
     text-align: left;
@@ -151,21 +184,39 @@ export default {
   &__submit {
     width: 100%;
     height: 48px;
-    background: #3e8e4a;
+    background: linear-gradient(180deg, #f4f5f9 0%, #e8e9ec 100%);
+    border: 1px solid #d3d3d3;
+
     border-radius: 10px;
     font-size: 18px;
     line-height: 21px;
-    color: #fff;
+    // color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
+    transition: all 500ms ease;
     &-img {
       display: inline-block;
-      margin-left: 20px;
+      margin-left: 10px;
+      opacity: 0;
+      transition: all 500ms ease;
     }
+  }
+  &__error {
+    font-size: 14px;
+    height: 18px;
+    color: red;
+  }
+  &__disabled {
+    cursor: not-allowed;
   }
 }
 .popup-active {
-  right: 10%;
+  right: 5%;
+  @media (max-width: 1600px) {
+    top: 40%;
+    right: 0;
+  }
 }
 </style>
