@@ -56,6 +56,10 @@ export default {};
   @media (max-width: 1600px) {
     margin: 20px 0;
   }
+  @media (max-width: 1366px) {
+    margin: 10px 0;
+    max-width: 180px;
+  }
 }
 .main {
   width: calc(100vw - 17px);
@@ -74,6 +78,10 @@ export default {};
     line-height: 42px;
     color: #8d8d8d;
     text-shadow: 0px 6px 9px rgba(0, 0, 0, 0.36);
+    @media (max-width: 1366px) {
+      font-size: 32px;
+      line-height: 32px;
+    }
   }
   &__text {
     font-size: 18px;
@@ -86,6 +94,9 @@ export default {};
       @media (max-width: 1600px) {
         margin-bottom: 15px;
       }
+    }
+    @media (max-width: 1366px) {
+      margin-bottom: 10px;
     }
   }
   &__link {

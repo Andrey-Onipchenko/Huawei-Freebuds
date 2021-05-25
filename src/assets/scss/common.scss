@@ -25,6 +25,10 @@
     font-size: 64px;
     line-height: 76px;
   }
+  @media (max-width: 1600px) {
+    font-size: 60px;
+    line-height: 64px;
+  }
 }
 .subtitle {
   font-weight: normal;
