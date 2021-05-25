@@ -290,7 +290,7 @@ export default {
     line-height: 28px;
     text-align: center;
     color: #fff;
-    max-width: 800px;
+    max-width: 950px;
     margin: 0 auto 55px;
   }
   &__answer {
