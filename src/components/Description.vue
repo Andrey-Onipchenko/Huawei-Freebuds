@@ -187,6 +187,9 @@ export default {
   components: {
     Test,
   },
+  mounted() {
+    this.$refs.descriptionBg.style.height = `${this.$refs.description.clientHeight}px`;
+  },
   methods: {
     changeColor(prop) {
       if (this.$refs.slideColor.classList.contains("feature-white")) {
