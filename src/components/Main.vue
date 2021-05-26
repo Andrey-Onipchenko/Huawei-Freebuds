@@ -1,7 +1,19 @@
 <template>
   <div class="main">
     <div class="container container_small">
-      <img class="logo" src="../assets/images/logo.png" alt="logo" />
+      <div class="logo">
+        <img
+          class="logo__huawei"
+          src="../assets/images/logo__huawei.png"
+          alt=""
+        />
+        <img
+          class="logo__vgorode"
+          src="../assets/images/logo__vgorode.png"
+          alt=""
+        />
+      </div>
+      <!-- <img class="logo" src="../assets/images/logo.png" alt="logo" /> -->
       <h4 class="main__test">тест</h4>
       <h1 class="title">Як звучить Україна</h1>
       <h2 class="subtitle">
@@ -21,8 +33,8 @@
       <div class="steap__item">
         <h4 class="steap__title">крок 1</h4>
         <p class="steap__text">
-          Прослухай фрагмент звукового запису, спробуй здогадатись яке це місто,
-          та обери свій варіант із списку.
+          Визначай, як звучать міста <br />
+          України.
         </p>
       </div>
       <div class="steap__item">
@@ -38,7 +50,8 @@
       <div class="steap__item">
         <h4 class="steap__title">крок 4</h4>
         <p class="steap__text">
-          Бери участь у розіграші навушників Huawei Freebuds 4i.
+          Бери участь у розіграші навушників Huawei Freebuds 4i. Буде три
+          переможці, кожен отримає свою пару Huawei Freebuds 4i.
         </p>
       </div>
     </div>
@@ -52,13 +65,20 @@ export default {};
 <style lang="scss" scoped>
 .logo {
   margin: 40px 0 46px;
-  max-width: 215px;
   @media (max-width: 1600px) {
     margin: 20px 0;
   }
   @media (max-width: 1366px) {
     margin: 10px 0;
-    max-width: 180px;
+  }
+  @media (max-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  &__huawei {
+    margin-right: 30px;
   }
 }
 .main {
@@ -71,6 +91,11 @@ export default {};
     width: 100vw;
     height: 50vh;
   }
+  @media (max-width: 600px) {
+    background: url("../assets/images/main__bg-mob.png") center no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
   &__test {
     font-family: "Huawei Bold", sans-serif;
     font-weight: bold;
@@ -81,6 +106,10 @@ export default {};
     @media (max-width: 1366px) {
       font-size: 32px;
       line-height: 32px;
+    }
+    @media (max-width: 600px) {
+      font-size: 36px;
+      line-height: 42px;
     }
   }
   &__text {
@@ -98,6 +127,10 @@ export default {};
     @media (max-width: 1366px) {
       margin-bottom: 10px;
     }
+    @media (max-width: 600px) {
+      font-size: 16px;
+      line-height: 19px;
+    }
   }
   &__link {
     border: 1px solid #fff;
@@ -110,6 +143,9 @@ export default {};
     color: #ffffff;
     padding: 14px 0 14px 33px;
     position: relative;
+    @media (max-width: 600px) {
+      margin: 0 auto;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -146,13 +182,25 @@ export default {};
     padding: 15px 0;
     bottom: -470px;
   }
+  @media (max-width: 600px) {
+    bottom: -100%;
+    left: -15px;
+    width: 100vw;
+    box-shadow: none;
+  }
   &__item {
-    height: 135px;
-    max-width: 260px;
+    height: 140px;
+    max-width: 340px;
     text-align: center;
     font-family: "Huawei Bold", sans-serif;
     @media (max-width: 1600px) {
       height: 130px;
+    }
+    @media (max-width: 1024px) {
+      min-width: 120px;
+    }
+    @media (max-width: 600px) {
+      height: auto;
     }
   }
   &__title {
@@ -166,6 +214,11 @@ export default {};
     @media (max-width: 1600px) {
       font-size: 32px;
       margin-bottom: 5px;
+    }
+    @media (max-width: 600px) {
+      font-size: 36px;
+      line-height: 42px;
+      margin-bottom: 15px;
     }
   }
   &__text {

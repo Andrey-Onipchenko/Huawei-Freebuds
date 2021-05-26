@@ -9,18 +9,18 @@
       <div class="feature">
         <div class="feature__row">
           <div class="feature__item feature__item-left">
-            <p class="text-bold">Активне приглушення шуму</p>
+            <p class="text-bold">Система активного шумозаглушення (ANC)</p>
             <p>
-              Датчики у навушниках активно визначають та компенсують шум
-              середовища. Де б ви не були, ви завжди можете зануритися в
-              улюблену музику
+              HUAWEI FreeBuds 4i самостійно виявляють навколишній шум за
+              допомогою мікрофонів і генерують зворотну звукову хвилю для його
+              зменшення. Один тривалий дотик до наушника дозволить змінювати
+              режим активного шумозаглушення на режим «прозорості» (чути звуки
+              довкола) і навпаки
             </p>
-            <p class="text-bold">Висока автономність</p>
+            <p class="text-bold">10 годин музики NON-STOP</p>
             <p>
-              Повний заряд:
-              <span class="text-bold">10 годин</span> прослуховування музики
-              <span class="text-bold">10 хвилин </span> заряджання для
-              <span class="text-bold">4 годин</span> автономності
+              10 годин відтворення музики і 7,5 годин голосових викликів на
+              одному заряді без кейса
             </p>
           </div>
           <div
@@ -46,10 +46,6 @@
               @click="featureOpen('rightTop')"
             ></div>
             <div
-              class="feature__line-right-center"
-              @click="featureOpen('rightCenter')"
-            ></div>
-            <div
               class="feature__line-right-bottom"
               @click="featureOpen('rightBottom')"
             ></div>
@@ -58,42 +54,33 @@
               class="feature__line-bottom"
               @click="featureOpen('bottomRight')"
             ></div>
-            <div
-              class="feature__line-bottom-left"
-              @click="featureOpen('bottomLeft')"
-            ></div>
           </div>
           <div class="feature__item feature__item-right">
-            <p class="text-bold">Легкість</p>
-            <p>Зменшення тиску на ваші вуха</p>
-            <p class="text-bold">Ергономічна форма</p>
-            <p>Ідеально поміщається у долоні</p>
-            <p class="text-bold">Естетика</p>
-            <p>Пласка поверхня кейсу</p>
+            <p class="text-bold">Сумісність с Android, iOS і Windows</p>
+            <p>
+              Натисніть бічну кнопку на кейсі навушників і ваш гаджет побачить
+              HUAWEI FreeBuds 4i серед пристроїв для підключення по Bluetoоth
+            </p>
+
+            <p class="text-bold">
+              Швидка зарядка: 10 хвилин = 4 години використання
+            </p>
+            <p>
+              Опустіть навушники в кейс на 1о хвилин, щоб ще 4 години
+              насолоджуватись улюбленим аудіо без необхідності довго чекати
+              підзарядки
+            </p>
           </div>
         </div>
         <div class="feature__row feature__row-bottom">
-          <div class="feature__item feature__bottom-left">
-            <p>
-              <span class="text-bold">Дизайн</span> <br />
-              Дизайн Компактний чохол-акумулятор має оригінальний дизайн і
-              гладеньку поверхню. Плавні обриси і дзеркальне полірування
-              навушників надають вам сучасного та непересічного вигляду.
-              Керамічно-білі, вугільно-чорні чи червоні — вони наповнять ваші
-              дні та ночі стилем.
+          <div class="feature__item feature__bottom">
+            <p class="text-bold feature__bottom-title">
+              Зручний і сучасний дизайн
             </p>
-          </div>
-          <div class="feature__item feature__bottom-right">
-            <p class="text-bold"></p>
             <p>
-              <span class="text-bold">
-                Автоматичне підключення до смартфону
-              </span>
-              <br />
-              Просто відкрийте чохол-акумулятор, і на вашому смартфоні або
-              планшеті з’явиться пропозиція встановити зв’язок з HUAWEI FreeBuds
-              4i.8 Зробіть це, і надалі навушники будуть автоматично
-              підключатися до вашого пристрою, коли ви відкриваєте чохол.
+              Легкий кейс округлої форми з природним вигином, що нагадує гальку.
+              Керамічно-білі, вугільно-чорні чи насичено-червоні — ці навушники
+              наповнять ваші дні та ночі стилем.
             </p>
           </div>
         </div>
@@ -150,31 +137,33 @@ export default {
       featureOut: { title: "title", text: "text" },
       featuredata: {
         leftTop: {
-          title: "Активне приглушення шуму",
+          title: "Система активного шумозаглушення (ANC)",
           text:
-            "Датчики у навушниках активно визначають та компенсують шум середовища. Де б ви не були, ви завжди можете зануритися в улюблену музику",
+            "HUAWEI FreeBuds 4i самостійно виявляють навколишній шум за допомогою мікрофонів і генерують зворотну звукову хвилю для його зменшення. Один тривалий дотик до наушника дозволить змінювати режим активного шумозаглушення на режим «прозорості» (чути звуки довкола) і навпаки",
         },
         leftCenter: {
-          title: "Висока автономність",
+          title: "10 годин музики  NON-STOP",
           text:
-            "Повний заряд: 10 годин прослуховування музики 10 хвилин заряджання для 4 годин автономності",
+            "10 годин відтворення музики і 7,5 годин голосових викликів на одному заряді без кейса",
         },
         rightTop: {
-          title: "Легкість",
-          text: "Зменшення тиску на ваші вуха",
+          title: "Сумісність с Android, iOS і Windows",
+          text:
+            "Натисніть бічну кнопку на кейсі навушників і ваш гаджет побачить HUAWEI FreeBuds 4i  серед пристроїв для підключення по Bluetoоth",
         },
         rightCenter: {
           title: "Ергономічна форма",
           text: "Ідеально поміщається у долоні",
         },
         rightBottom: {
-          title: "Естетика",
-          text: "Пласка поверхня кейсу",
+          title: "Швидка зарядка: 10 хвилин = 4 години використання",
+          text:
+            "Опустіть навушники в кейс на 1о хвилин, щоб ще 4 години насолоджуватись улюбленим аудіо без необхідності довго чекати підзарядки",
         },
         bottomRight: {
-          title: "Дизайн",
+          title: "Зручний і сучасний дизайн",
           text:
-            "Компактний чохол-акумулятор має оригінальний дизайн і гладеньку поверхню. Плавні обриси і дзеркальне полірування навушників надають вам сучасного та непересічного вигляду. Керамічно-білі, вугільно-чорні чи червоні — вони наповнять ваші дні та ночі стилем.",
+            "Легкий кейс  округлої форми з природним вигином, що нагадує гальку. Керамічно-білі, вугільно-чорні чи насичено-червоні — ці навушники наповнять ваші дні та ночі стилем.",
         },
         bottomLeft: {
           title: "Автоматичне підключення до смартфону",
@@ -231,9 +220,15 @@ export default {
     top: 0;
     left: 0;
     background: url("../assets/images/notes.png") center no-repeat;
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
   @media (max-width: 768px) {
     padding-top: 500px;
+  }
+  @media (max-width: 600px) {
+    padding-top: 100vh;
   }
   &__title {
     font-weight: normal;
@@ -243,6 +238,11 @@ export default {
     color: #000000;
     @media (max-width: 1366px) {
       font-size: 58px;
+      line-height: 64px;
+    }
+    @media (max-width: 360px) {
+      font-size: 48px;
+      line-height: 56px;
     }
   }
 }
@@ -300,10 +300,14 @@ export default {
     justify-content: center;
     @media (max-width: 1366px) {
       font-size: 16px;
+      line-height: 18px;
       height: 440px;
     }
     @media (max-width: 1024px) {
       height: 520px;
+    }
+    @media (max-width: 350px) {
+      height: 440px;
     }
     &-left {
       text-align: right;
@@ -313,11 +317,13 @@ export default {
         padding-top: 80px;
       }
       p:nth-child(2) {
-        max-width: 385px;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
+        @media (max-width: 1366px) {
+          margin-bottom: 40px;
+        }
       }
       p:nth-child(4) {
-        max-width: 265px;
+        max-width: 370px;
         @media (max-width: 1366px) {
           max-width: 340px;
         }
@@ -339,17 +345,20 @@ export default {
       justify-content: flex-start;
       padding-top: 90px;
       padding-left: 20px;
-
       p:nth-child(2),
       p:nth-child(4) {
-        max-width: 240px;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
         width: 100%;
         @media (max-width: 1366px) {
+          margin-bottom: 70px;
           max-width: 270px;
         }
       }
+      p:nth-child(3) {
+        max-width: 360px;
+      }
       p:nth-child(4) {
+        max-width: 390px;
         margin-bottom: 15px;
       }
       @media (max-width: 1440px) {
@@ -386,6 +395,10 @@ export default {
         right: auto;
         left: 155px;
       }
+      @media (max-width: 600px) {
+        top: 32%;
+        left: 28%;
+      }
       &-mobile {
         display: none;
         @media (max-width: 1024px) {
@@ -398,17 +411,21 @@ export default {
           background: url("../assets/images/circle.svg") center no-repeat;
           background-size: contain;
         }
+        @media (max-width: 600px) {
+          top: 32%;
+          right: 29%;
+        }
       }
     }
     &-left-center {
       position: absolute;
-      top: 305px;
+      top: 360px;
       left: -20px;
-      width: 85px;
+      width: 105px;
       background: #8f8f8f;
       height: 2px;
       @media (max-width: 1366px) {
-        top: 237px;
+        top: 273px;
         width: 120px;
       }
       @media (max-width: 1024px) {
@@ -416,8 +433,12 @@ export default {
         height: 30px;
         background: url("../assets/images/circle.svg") center no-repeat;
         background-size: contain;
-        left: 70px;
-        top: 280px;
+        left: 105px;
+        top: 320px;
+      }
+      @media (max-width: 600px) {
+        left: 18%;
+        top: 58%;
       }
     }
     &-right-top {
@@ -443,35 +464,16 @@ export default {
         top: 85px;
         left: 395px;
       }
-    }
-    &-right-center {
-      position: absolute;
-      top: 240px;
-      left: 440px;
-      width: 50px;
-      background: #8f8f8f;
-      height: 2px;
-
-      @media (max-width: 1366px) {
-        top: 200px;
-        left: 380px;
-        width: 40px;
-      }
-      @media (max-width: 1024px) {
-        width: 30px;
-        height: 30px;
-        background: url("../assets/images/circle.svg") center no-repeat;
-        background-size: contain;
-        right: 55px;
-        top: 235px;
-        left: 410px;
+      @media (max-width: 600px) {
+        top: 23%;
+        left: 82%;
       }
     }
     &-right-bottom {
       position: absolute;
-      top: 337px;
-      left: 415px;
-      width: 75px;
+      top: 330px;
+      left: 420px;
+      width: 70px;
       background: #8f8f8f;
       height: 2px;
       @media (max-width: 1366px) {
@@ -484,84 +486,48 @@ export default {
         height: 30px;
         background: url("../assets/images/circle.svg") center no-repeat;
         background-size: contain;
-        top: 310px;
-        left: 380px;
+        top: 280px;
+        left: 400px;
         right: 85px;
+      }
+      @media (max-width: 600px) {
+        top: 50%;
+        left: 83%;
       }
     }
     &-bottom {
       position: absolute;
       bottom: 0;
-      left: 172px;
+      left: -20px;
+      right: 0;
+      margin: 0 auto;
       width: 2px;
       background: #8f8f8f;
       height: 135px;
       @media (max-width: 1366px) {
         height: 35px;
         bottom: 80px;
+        left: 0;
       }
       @media (max-width: 1024px) {
         width: 30px;
         height: 30px;
         background: url("../assets/images/circle.svg") center no-repeat;
         background-size: contain;
-        bottom: 142px;
-        left: 150px;
+        bottom: 135px;
+        left: 5px;
       }
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 138px;
-        width: 2px;
-        background: #8f8f8f;
-        height: 135px;
-        @media (max-width: 1366px) {
-          height: 35px;
-          left: 105px;
-        }
-        @media (max-width: 1024px) {
-          content: none;
-        }
-      }
-      &-left {
-        display: none;
-
-        @media (max-width: 1024px) {
-          display: block;
-          position: absolute;
-          width: 30px;
-          height: 30px;
-          background: url("../assets/images/circle.svg") center no-repeat;
-          background-size: contain;
-          bottom: 140px;
-          left: 310px;
-        }
+      @media (max-width: 600px) {
+        bottom: 30%;
       }
     }
   }
   &__bottom {
     justify-content: flex-start;
-
-    &-left {
-      height: auto;
-      text-align: right;
-      max-width: 465px;
-      margin-right: 65px;
-      @media (max-width: 1366px) {
-        max-width: 45%;
-        width: 100%;
-        margin-right: 0;
-      }
-    }
-    &-right {
-      height: auto;
-      text-align: left;
-      justify-content: flex-start;
-      @media (max-width: 1366px) {
-        max-width: 45%;
-        width: 100%;
-      }
+    text-align: center;
+    height: auto;
+    &-title {
+      margin: 0 auto;
     }
   }
 }
@@ -576,6 +542,7 @@ export default {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   text-align: center;
   display: none;
+  z-index: 2;
   &__open {
     display: block;
   }
@@ -597,20 +564,37 @@ export default {
   @media (max-width: 1024px) {
     margin-top: -50px;
   }
+  @media (max-width: 600px) {
+    margin-top: -100px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
   &__item {
     max-width: 165px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    @media (max-width: 600px) {
+      max-width: 35%;
+    }
     &:nth-child(2) {
       align-items: center;
+      @media (max-width: 600px) {
+        align-items: flex-start;
+      }
     }
     &:nth-child(3) {
       align-items: flex-start;
+      @media (max-width: 600px) {
+        align-items: center;
+      }
     }
     &-center {
       margin: 0 65px;
+      @media (max-width: 600px) {
+        margin: 0 0 20px;
+      }
     }
   }
   &__bullet {
@@ -630,6 +614,10 @@ export default {
       height: 48px;
       margin-bottom: 20px;
     }
+    @media (max-width: 600px) {
+      width: 24px;
+      height: 24px;
+    }
     &_red {
       background: linear-gradient(180deg, #b2252d 0%, #a40c15 100%);
     }
@@ -648,6 +636,14 @@ export default {
     @media (max-width: 1024px) {
       font-size: 24px;
       line-height: 28px;
+    }
+    @media (max-width: 600px) {
+      font-size: 18px;
+      line-height: 21px;
+    }
+    @media (max-width: 350px) {
+      font-size: 15px;
+      line-height: 17px;
     }
   }
 }

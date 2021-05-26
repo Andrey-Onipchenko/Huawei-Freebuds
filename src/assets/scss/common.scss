@@ -13,6 +13,10 @@
     @media (max-width: 1366px) {
       height: 87%;
     }
+    @media (max-width: 600px) {
+      max-height: 85vh;
+      height: 100%;
+    }
   }
 }
 .title {
@@ -29,6 +33,10 @@
     font-size: 60px;
     line-height: 64px;
   }
+  @media (max-width: 600px) {
+    font-size: 48px;
+    line-height: 56px;
+  }
 }
 .subtitle {
   font-weight: normal;
@@ -38,6 +46,10 @@
   margin-bottom: 32px;
   @media (max-width: 1600px) {
     margin-bottom: 10px;
+  }
+  @media (max-width: 600px) {
+    font-size: 27px;
+    line-height: 32px;
   }
 }
 .text {

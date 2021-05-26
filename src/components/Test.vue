@@ -64,7 +64,7 @@ export default {
       audio: null,
       slide: {
         question:
-          "Прослухай фрагмент звукового запису звуків міста та спробуй здогадатись, яке звучить саме так, й обери свій варіант із списку.",
+          "Давай почнемо з простого: одне з найколоритніших міст України, у яке неможливо не закохатися?",
         answer: "Так звучить Одеса!",
         answerOne: "Так звучить Київ!",
         answerTwo: "Так звучить Одеса!",
@@ -75,51 +75,51 @@ export default {
         question:
           "Добре, а якщо ми запитаємо таке: місто, де можна знайти майже все, а туристів, напевно, навіть більше, ніж місцевих?",
         answer: "Так звучить Львів!",
-        answerOne: "Так звучить Полтава!",
+        answerOne: "Так звучить Запоріжжя!",
         answerTwo: "Так звучить Одеса!",
         answerThree: "Так звучить Львів!",
         answerFour: "Так звучить Харків!",
       },
       slideThree: {
         question:
-          "Окей, далі ось таке завдання: це місто, що може пишатись своєю продуктивністю, місто-робітник?",
+          "Окей, далі ось таке завдання: це місто, що може пишатись своєю продуктивністю, місто-робітник. А ще тут розташоване найвище колесо огляду в Україні",
         answer: "Так звучить Харків!",
         answerOne: "Так звучить Харків!",
         answerTwo: "Так звучить Львів!",
-        answerThree: "Так звучить Дніпро!",
-        answerFour: "Так звучать Карпати!",
+        answerThree: "Так звучить Вінниця!",
+        answerFour: "Так звучать Київ!",
       },
       slideFour: {
         question:
           "Добре, трохи поїдемо подалі від міст, що скажеш про це: місце, де живе одвічний спокій та натхнення? Тут можна відпочити душею та сповнитись гармонією.",
         answer: "Так звучать Карпати!",
         answerOne: "Так звучать Карпати!",
-        answerTwo: "Так звучить Полтава!",
+        answerTwo: "Так звучить Запоріжжя!",
         answerThree: "Так звучить Київ!",
         answerFour: "Так звучить Одеса!",
       },
       slideFive: {
         question:
-          "А зараз буде складно: це місце з вагомою історичною та навіть містичною спадщиною?",
-        answer: "Так звучить Полтава!",
-        answerOne: "Так звучить Харків!",
+          "А зараз буде складно: це місто кілька разів підряд було лідером в рейтингу найкомфортніших міст  України",
+        answer: "Так звучить Вінниця!",
+        answerOne: "Так звучить Львів !",
         answerTwo: "Так звучить Дніпро!",
-        answerThree: "Так звучить Полтава!",
+        answerThree: "Так звучить Вінниця!",
         answerFour: "Так звучить Одеса!",
       },
       slideSix: {
         question:
-          "Окей, ще трошки непростого: місто, де можна майже нескінченно довго гуляти біля річки?",
-        answer: "Так звучить Дніпро!",
-        answerOne: "Так звучить Полтава!",
-        answerTwo: "Так звучить Дніпро!",
+          "Окей, ще трішки непростого: місто з багатовіковою історією, батьківщина козацької вольності. Місто, в якому поєднуються сучасне та відлуння минулого",
+        answer: "Так звучить Запоріжжя!",
+        answerOne: "Так звучить Харків!",
+        answerTwo: "Так звучить Запоріжжя!",
         answerThree: "Так звучить Львів!",
         answerFour: "Так звучить Одеса!",
       },
       slideSeven: {
         question: "І останнє питання: місто, по якому впізнають нашу країну?",
         answer: "Так звучить Київ!",
-        answerOne: "Так звучить Дніпро!",
+        answerOne: "Так звучить Запоріжжя!",
         answerTwo: "Так звучить Львів!",
         answerThree: "Так звучать Карпати!",
         answerFour: "Так звучить Київ!",
@@ -177,6 +177,7 @@ export default {
       btnPlay.add(add);
     },
     choiceAnswer(event) {
+      this.disableAnswer(true);
       if (this.audio.currentTime) {
         this.audio.pause();
         this.audio.currentTime = 0;
@@ -203,10 +204,22 @@ export default {
           }
         });
       }
+
       setTimeout(() => {
         slide.style.opacity = "0";
         this.nextSlide(slide, btnsAnswer);
+        this.disableAnswer(false);
       }, 1000);
+    },
+    disableAnswer(disable) {
+      const answerBtns = document.querySelectorAll(".slide__answer-btn");
+      answerBtns.forEach((btn) => {
+        if (disable) {
+          btn.setAttribute("disabled", disable);
+        } else {
+          btn.removeAttribute("disabled");
+        }
+      });
     },
     nextSlide(slide, btnsAnswer) {
       setTimeout(() => {
@@ -268,6 +281,17 @@ export default {
     background-position: center;
     padding-top: 180px;
   }
+  @media (max-width: 600px) {
+    width: 100vw;
+    height: 100vh;
+    margin-left: -15px;
+    background-size: cover;
+    padding-top: 150px;
+    margin-bottom: 60px;
+  }
+  @media (max-width: 350px) {
+    padding-top: 50px;
+  }
 }
 .slide {
   width: 100%;
@@ -297,9 +321,18 @@ export default {
     color: #fff;
     max-width: 950px;
     margin: 0 auto 55px;
+    @media (max-width: 600px) {
+      margin-bottom: 40px;
+      padding: 0 15px;
+    }
+    @media (max-width: 350px) {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
   }
   &__answer {
-    max-width: 590px;
+    max-width: 650px;
     margin: 0 auto;
     &-line {
       display: flex;
@@ -307,10 +340,18 @@ export default {
       margin-bottom: 15px;
       &:nth-child(2) {
         margin-bottom: 30px;
+        @media (max-width: 600px) {
+          margin-bottom: 0;
+        }
+      }
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
       }
     }
     &-btn {
-      width: 284px;
+      width: 315px;
       height: 48px;
       padding-left: 35px;
       background: #fff;
@@ -331,6 +372,14 @@ export default {
         top: 50%;
         right: 25px;
         transform: translateY(-50%);
+      }
+      @media (max-width: 600px) {
+        margin-bottom: 15px;
+        width: 90vw;
+      }
+      @media (max-width: 350px) {
+        font-size: 16px;
+        line-height: 19px;
       }
     }
   }
