@@ -1,6 +1,6 @@
 <template>
   <button @click="openPopup()" class="popup-open btn-result">
-    ЗАРЕЄСТРУВАТИСЬ
+    Прийняти участь у розіграші
   </button>
   <div ref="popup" class="popup" :class="isOpen && 'popup-active'">
     <div class="popup__wrap">
@@ -88,6 +88,7 @@ export default {
               this.$refs.submitBtn.style.background = "#3e8e4a";
               this.$refs.submitImg.style.opacity = "1";
               this.registrationSuccessfully = true;
+              this.error = null;
               // this.registration = false;
               // this.reg = true;
               // this.gtagRegistration();
@@ -117,7 +118,6 @@ export default {
 .popup-open {
   color: #fff;
   background: #3e8e4a;
-  text-transform: uppercase;
 }
 .popup {
   max-width: 320px;

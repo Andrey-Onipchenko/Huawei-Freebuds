@@ -19,10 +19,7 @@
         {{ result.paragrafTwo }}
       </p>
       <div class="result__btns">
-        <a
-          class="result__btn-share btn-result"
-          href="https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/"
-          target="_blank"
+        <a class="result__btn-share btn-result" :href="href" target="_blank"
           >Поділитись</a
         >
         <Popup />
@@ -37,6 +34,8 @@ export default {
   name: "Result",
   data() {
     return {
+      href:
+        "https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/shareOne.html",
       answer: 0,
       result: {
         paragrafOne:
@@ -70,10 +69,16 @@ export default {
   mounted() {
     let resultNumber = this.$router.currentRoute.value.query.count;
     if (resultNumber >= 20 && resultNumber <= 30) {
+      this.href =
+        "https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/shareTwo.html";
       this.result = this.resultTwo;
     } else if (resultNumber >= 40 && resultNumber <= 50) {
+      this.href =
+        "https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/shareThree.html";
       this.result = this.resultThree;
     } else if (resultNumber >= 60 && resultNumber <= 70) {
+      this.href =
+        "https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/shareFour.html";
       this.result = this.resultFour;
     }
 

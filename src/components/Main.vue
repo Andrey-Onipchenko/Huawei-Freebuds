@@ -53,7 +53,7 @@
         <h4 class="steap__title">крок 4</h4>
         <p class="steap__text">
           Бери участь у розіграші навушників Huawei Freebuds 4i. Буде три
-          переможці, кожен отримає свою пару Huawei Freebuds 4i.
+          переможця, кожен отримає свою пару Huawei Freebuds 4i.
         </p>
       </div>
     </div>
