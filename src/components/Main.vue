@@ -2,16 +2,18 @@
   <div class="main">
     <div class="container container_small">
       <div class="logo">
-        <img
-          class="logo__huawei"
-          src="../assets/images/logo__huawei.png"
-          alt=""
-        />
-        <img
-          class="logo__vgorode"
-          src="../assets/images/logo__vgorode.png"
-          alt=""
-        />
+        <a href="https://consumer.huawei.com/ua/" target="_blank">
+          <img
+            class="logo__huawei"
+            src="../assets/images/logo__huawei.png"
+            alt=""
+        /></a>
+        <a href="https://vgorode.ua/" target="_blank">
+          <img
+            class="logo__vgorode"
+            src="../assets/images/logo__vgorode.png"
+            alt=""
+        /></a>
       </div>
       <!-- <img class="logo" src="../assets/images/logo.png" alt="logo" /> -->
       <h4 class="main__test">тест</h4>

@@ -641,7 +641,7 @@ export default {
       font-size: 18px;
       line-height: 21px;
     }
-    @media (max-width: 350px) {
+    @media (max-width: 360px) {
       font-size: 15px;
       line-height: 17px;
     }

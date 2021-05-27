@@ -2,11 +2,11 @@
   <div class="test" id="testScroll">
     <div class="test__content">
       <div ref="slide" class="slide">
-        <div
+        <button
           ref="play"
           @click="play($event)"
           class="slide__control slide__play"
-        ></div>
+        ></button>
         <audio ref="audioOne" preload="auto">
           <source src="../assets/audio/slide_1.mp3" type="audio/mp3" />
         </audio>
@@ -213,11 +213,15 @@ export default {
     },
     disableAnswer(disable) {
       const answerBtns = document.querySelectorAll(".slide__answer-btn");
+      const playDisable = document.querySelector(".slide__control");
+      console.log(playDisable);
       answerBtns.forEach((btn) => {
         if (disable) {
           btn.setAttribute("disabled", disable);
+          playDisable.setAttribute("disabled", disable);
         } else {
           btn.removeAttribute("disabled");
+          playDisable.removeAttribute("disabled");
         }
       });
     },
@@ -292,6 +296,13 @@ export default {
   @media (max-width: 350px) {
     padding-top: 50px;
   }
+  &__content {
+    @media (max-width: 600px) {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+  }
 }
 .slide {
   width: 100%;
@@ -301,6 +312,7 @@ export default {
     height: 80px;
     margin: 0 auto 20px;
     cursor: pointer;
+    display: block;
   }
   &__play {
     background: url("../assets/images/play.png");

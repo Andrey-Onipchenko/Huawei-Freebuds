@@ -2,7 +2,10 @@
   <div class="result">
     <div class="result__content">
       <router-link class="result__refresh" to="/#testScroll">
-        <img src="../assets/images/refresh.png" alt="refresh"
+        <img
+          class="result__refresh-img"
+          src="../assets/images/refresh.png"
+          alt="refresh"
       /></router-link>
       <p class="result__text text-bold result__again">Пройти тест ще раз</p>
       <h3 class="result__title text-bold">
@@ -16,7 +19,12 @@
         {{ result.paragrafTwo }}
       </p>
       <div class="result__btns">
-        <a class="result__btn-share btn-result" href="#">Поділитись</a>
+        <a
+          class="result__btn-share btn-result"
+          href="https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/"
+          target="_blank"
+          >Поділитись</a
+        >
         <Popup />
       </div>
     </div>
@@ -83,7 +91,7 @@ export default {
 
 <style lang="scss" scoped>
 .result {
-  height: 100vh;
+  min-height: 100vh;
   background: url("../assets/images/result_bg.png") center no-repeat;
   background-size: cover;
   display: flex;
@@ -91,6 +99,9 @@ export default {
   justify-content: center;
   color: #fff;
   text-align: center;
+  @media (max-width: 350px) {
+    align-items: flex-start;
+  }
   &__content {
     max-width: 670px;
     width: 100%;
@@ -99,20 +110,41 @@ export default {
     display: block;
     width: 80px;
     margin: 0 auto 15px;
+    @media (max-width: 350px) {
+      margin: 10px auto;
+    }
+    &-img {
+      @media (max-width: 350px) {
+        width: 60px;
+      }
+    }
   }
   &__text {
     font-size: 18px;
     line-height: 21px;
+    @media (max-width: 350px) {
+      font-size: 16px;
+      line-height: 17px;
+    }
     &-paragraf {
       margin-bottom: 25px;
       padding: 0 10px;
+      @media (max-width: 600px) {
+        margin-bottom: 10px;
+      }
       &:nth-child(5) {
         margin-bottom: 35px;
+        @media (max-width: 600px) {
+          margin-bottom: 10px;
+        }
       }
     }
   }
   &__again {
     margin-bottom: 35px;
+    @media (max-width: 600px) {
+      margin-bottom: 10px;
+    }
   }
   &__title {
     font-size: 24px;
@@ -122,11 +154,19 @@ export default {
   &__btns {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__btn {
     &-share {
       background: #1877f2;
       position: relative;
+      @media (max-width: 600px) {
+        flex-direction: column;
+        margin-bottom: 15px;
+      }
       &::before {
         content: "";
         position: absolute;

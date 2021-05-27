@@ -218,5 +218,8 @@ export default {
     top: 40%;
     right: 0;
   }
+  @media (max-width: 350px) {
+    top: 52%;
+  }
 }
 </style>
