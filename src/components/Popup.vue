@@ -69,7 +69,7 @@ export default {
   methods: {
     openPopup() {
       this.isOpen = true;
-      // this.userCreated = null;
+      this.analiticsRegistration();
     },
     closePopup() {
       this.isOpen = false;
@@ -109,6 +109,12 @@ export default {
           ? (this.$refs.inputPhone.style.color = "red")
           : (this.$refs.inputPhone.style.color = "#d3d3d3");
       }
+    },
+    analiticsRegistration() {
+      this.$gtag.event("click", {
+        event_category: "huawei",
+        event_label: "b_3",
+      });
     },
   },
 };

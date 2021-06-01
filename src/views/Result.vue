@@ -1,7 +1,11 @@
 <template>
   <div class="result">
     <div class="result__content">
-      <router-link class="result__refresh" to="/#testScroll">
+      <router-link
+        class="result__refresh"
+        @click="analiticsPlayAgain()"
+        to="/#testScroll"
+      >
         <img
           class="result__refresh-img"
           src="../assets/images/refresh.png"
@@ -19,7 +23,11 @@
         {{ result.paragrafTwo }}
       </p>
       <div class="result__btns">
-        <a class="result__btn-share btn-result" :href="href" target="_blank"
+        <a
+          class="result__btn-share btn-result"
+          @click="analiticsShare()"
+          :href="href"
+          target="_blank"
           >Поділитись</a
         >
         <Popup />
@@ -90,6 +98,21 @@ export default {
     } else {
       this.$router.push("/");
     }
+  },
+  methods: {
+    analiticsShare() {
+      console.log("hhh");
+      this.$gtag.event("click", {
+        event_category: "huawei",
+        event_label: "b_2",
+      });
+    },
+    analiticsPlayAgain() {
+      this.$gtag.event("click", {
+        event_category: "huawei",
+        event_label: "b_4",
+      });
+    },
   },
 };
 </script>

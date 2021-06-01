@@ -29,7 +29,9 @@
         Давай разом з Huawei Freebuds 4i перевіримо, наскільки добре ти
         розбираєшся у звучанні різних міст України.
       </p>
-      <a class="main__link" href="#testScroll">Перевірити себе</a>
+      <a class="main__link" href="#testScroll" @click="analitics()"
+        >Перевірити себе</a
+      >
     </div>
     <div class="steap">
       <div class="steap__item">
@@ -61,7 +63,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    analitics() {
+      this.$gtag.event("click", {
+        event_category: "huawei",
+        event_label: "b_1",
+      });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
