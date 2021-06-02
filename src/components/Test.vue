@@ -254,12 +254,13 @@ export default {
           case 7:
             this.slide = this.slideSeven;
             break;
-          case 8:
-            this.$router.push({
-              path: "result",
-              query: { count: this.result },
-            });
-            break;
+        }
+
+        if (this.step >= 8) {
+          this.$router.push({
+            path: "result",
+            query: { count: this.result },
+          });
         }
         slide.style.opacity = "1";
       }, 1000);

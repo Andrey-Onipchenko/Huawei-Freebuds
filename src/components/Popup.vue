@@ -1,11 +1,14 @@
 <template>
   <button @click="openPopup()" class="popup-open btn-result">
-    Прийняти участь у розіграші
+    Взяти участь у розіграші
   </button>
   <div ref="popup" class="popup" :class="isOpen && 'popup-active'">
     <div class="popup__wrap">
       <button @click="closePopup()" class="popup__close"></button>
       <h4 class="popup__title">Реєстрація</h4>
+      <h5 class="popup__subtitle">
+        для участі в розіграші 3-х пар навушників Huawei Freebuds 4i
+      </h5>
       <div class="popup__enter">
         <p class="popup__enter-title">Ваше ім’я</p>
         <input
@@ -48,6 +51,10 @@
           alt="submit"
         />
       </button>
+      <p class="popup__submit-subtext">
+        Не забудьте зробити шер результату на власній сторінці у соцмережі
+        Facebook, це умова участі у розіграші
+      </p>
       <p class="popup__error">{{ error }}</p>
     </div>
   </div>
@@ -161,7 +168,13 @@ export default {
     font-weight: bold;
     font-size: 36px;
     line-height: 42px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  &__subtitle {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
   }
   &__enter {
     margin-bottom: 25px;
@@ -207,6 +220,10 @@ export default {
       margin-left: 10px;
       opacity: 0;
       transition: all 500ms ease;
+    }
+    &-subtext {
+      text-align: center;
+      font-size: 10px;
     }
   }
   &__error {

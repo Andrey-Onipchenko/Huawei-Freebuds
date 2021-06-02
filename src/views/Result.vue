@@ -120,7 +120,7 @@ export default {
 <style lang="scss" scoped>
 .result {
   min-height: 100vh;
-  background: url("../assets/images/result_bg.png") center no-repeat;
+  background: url("../assets/images/test_bg.png") center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
