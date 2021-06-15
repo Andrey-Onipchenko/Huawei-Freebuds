@@ -7,17 +7,15 @@
       <button @click="closePopup()" class="popup__close"></button>
       <h4 class="popup__title">Реєстрація</h4>
       <h5 class="popup__subtitle">
-        для участі в розіграші 3-х пар навушників Huawei Freebuds 4i
+        для участі в розіграші 3-х пар навушників Huawei FreeBuds 4i
       </h5>
       <div class="popup__enter">
         <p class="popup__enter-title">Ваше ім’я</p>
         <input
           class="popup__enter-input"
-          :class="registrationSuccessfully && 'popup__disabled'"
           v-model="userName"
           type="text"
           name="name"
-          :disabled="registrationSuccessfully"
         />
         <p class="popup__enter-subtitle" ref="inputName">Це поле обов’язкове</p>
       </div>
@@ -25,28 +23,19 @@
         <p class="popup__enter-title">Ваш номер:</p>
         <input
           class="popup__enter-input"
-          :class="registrationSuccessfully && 'popup__disabled'"
           v-model="userPhone"
           type="phone"
           name="phone"
           v-maska="'+38 (0##) ###-##-##'"
-          :disabled="registrationSuccessfully"
         />
         <p class="popup__enter-subtitle" ref="inputPhone">
           Це поле обов’язкове
         </p>
       </div>
-      <button
-        class="popup__submit"
-        :class="registrationSuccessfully && 'popup__disabled'"
-        @click="sub()"
-        ref="submitBtn"
-        :disabled="registrationSuccessfully"
-      >
+      <button class="popup__submit" @click="sub()" ref="submitBtn">
         {{ userCreated }}
         <img
           class="popup__submit-img"
-          ref="submitImg"
           src="../assets/images/submit.svg"
           alt="submit"
         />
@@ -70,9 +59,9 @@ export default {
       userPhone: "",
       userCreated: "Надіслати заявку",
       error: null,
-      registrationSuccessfully: false,
     };
   },
+  emits: ["finishRegistration"],
   methods: {
     openPopup() {
       this.isOpen = true;
@@ -84,21 +73,15 @@ export default {
     sub() {
       if (this.userPhone.length === 19 && this.userName.length > 0) {
         axios
-          .post("https://back-sp.umh.com.ua/api/huawei/freebuds/new", {
+          .post("https://back-sp.umh.com.ua/api/huawei/FreeBuds/new", {
             name: this.userName,
             phone: this.userPhone,
           })
           .then((response) => {
             if (response.status === 201) {
-              this.userCreated = response.data.msg;
-              this.$refs.submitBtn.style.color = "#fff";
-              this.$refs.submitBtn.style.background = "#3e8e4a";
-              this.$refs.submitImg.style.opacity = "1";
-              this.registrationSuccessfully = true;
+              this.closePopup();
               this.error = null;
-              // this.registration = false;
-              // this.reg = true;
-              // this.gtagRegistration();
+              this.$emit("finishRegistration");
             } else if (response.status === 200) {
               this.error = "Користувач з таким телефоном вже існує";
             } else if (response.status === 500) {
@@ -230,9 +213,6 @@ export default {
     font-size: 14px;
     height: 18px;
     color: red;
-  }
-  &__disabled {
-    cursor: not-allowed;
   }
 }
 .popup-active {

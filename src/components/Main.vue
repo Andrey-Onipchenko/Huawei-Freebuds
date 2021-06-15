@@ -19,14 +19,14 @@
       <h4 class="main__test">тест</h4>
       <h1 class="title">Як звучить Україна</h1>
       <h2 class="subtitle">
-        З <span class="text-red">Huawei</span> Freebuds 4i
+        З <span class="text-red">Huawei</span> FreeBuds 4i
       </h2>
       <p class="main__text">
         Кожне місто в Україні по-своєму унікальне та особливе. А також кожне із
         них винятково звучить.
       </p>
       <p class="main__text">
-        Давай разом з Huawei Freebuds 4i перевіримо, наскільки добре ти
+        Давай разом з Huawei FreeBuds 4i перевіримо, наскільки добре ти
         розбираєшся у звучанні різних міст України.
       </p>
       <a class="main__link" href="#testScroll" @click="analitics()"
@@ -36,10 +36,7 @@
     <div class="steap">
       <div class="steap__item">
         <h4 class="steap__title">крок 1</h4>
-        <p class="steap__text">
-          Визначай, як звучать міста <br />
-          України.
-        </p>
+        <p class="steap__text">Визначай міста України за їх звучанням</p>
       </div>
       <div class="steap__item">
         <h4 class="steap__title">крок 2</h4>
@@ -54,8 +51,8 @@
       <div class="steap__item">
         <h4 class="steap__title">крок 4</h4>
         <p class="steap__text">
-          Бери участь у розіграші навушників Huawei Freebuds 4i. Буде три
-          переможці, кожен отримає свою пару Huawei Freebuds 4i.
+          Бери участь у розіграші навушників Huawei FreeBuds 4i. Буде три
+          переможці, кожен отримає свою пару Huawei FreeBuds 4i.
         </p>
       </div>
     </div>

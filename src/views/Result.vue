@@ -23,14 +23,8 @@
         {{ result.paragrafTwo }}
       </p>
       <div class="result__btns">
-        <a
-          class="result__btn-share btn-result"
-          @click="analiticsShare()"
-          :href="href"
-          target="_blank"
-          >Поділитись</a
-        >
-        <Popup />
+        <Popup v-on:finishRegistration="openShare" v-if="takePart" />
+        <PopupFinish v-if="share" :href="href" v-on:closeShare="closeShare" />
       </div>
     </div>
   </div>
@@ -38,56 +32,71 @@
 
 <script>
 import Popup from "@/components/Popup.vue";
+import PopupFinish from "@/components/PopupFinish.vue";
 export default {
   name: "Result",
   data() {
     return {
-      href:
-        "https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/shareOne.html",
+      href: "https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/shareOne.html",
       answer: 0,
+      share: false,
+      takePart: true,
       result: {
         paragrafOne:
-          "Ти тільки на шляху до нових відкриттів! Не засмучуйся! Нехай зараз ти ще  не знаєш, як звучить вся Україна, але ми впевнені, ти точно усе  надолужиш. Особливо, якщо ти матимеш навушники Huawei Freebuds 4i, адже з ними так приємно подорожувати! Їхнього заряду вистачає на 10 годин  безперервної роботи, а цього часу цілком достатньо, щоб дістатися до іншого міста!",
+          "Ти тільки на шляху до нових відкриттів! Не засмучуйся! Нехай зараз ти ще  не знаєш, як звучить вся Україна, але ми впевнені, ти точно усе  надолужиш. Особливо, якщо ти матимеш навушники Huawei FreeBuds 4i, адже з ними так приємно подорожувати! Їхнього заряду вистачає на 10 годин  безперервної роботи, а цього часу цілком достатньо, щоб дістатися до іншого міста!",
         paragrafTwo:
-          "І звісно, підкорювати нові горизонти хочеться тільки у компанії гарних людей і речей. Люди - це за тобою, а от з Huawei Freebuds 4i ти завжди матимеш під рукою зручний та сучасний девайс. З яким навіть натюрморт із  плакцартним обідом виглядатиме стильно.",
+          "І звісно, підкорювати нові горизонти хочеться тільки у компанії гарних людей і речей. Люди - це за тобою, а от з Huawei FreeBuds 4i ти завжди матимеш під рукою зручний та сучасний девайс. З яким навіть натюрморт із  плакцартним обідом виглядатиме стильно.",
       },
       resultTwo: {
         paragrafOne:
-          "Ти тільки на початку відкриттів, але гарно знаєшся на рідних краях! Нехай поки що ти не знаєш багато про всі міста, головне, що початок покладено! Тепер лишилось тільки купити новенькі Huawei Freebuds 4i та відправлятися у дорогу, щоб відкрити для себе нові горизонти до найгарніших та найцікавіших українських міст! ",
+          "Ти тільки на початку відкриттів, але гарно знаєшся на рідних краях! Нехай поки що ти не знаєш багато про всі міста, головне, що початок покладено! Тепер лишилось тільки купити новенькі Huawei FreeBuds 4i та відправлятися у дорогу, щоб відкрити для себе нові горизонти до найгарніших та найцікавіших українських міст! ",
         paragrafTwo:
-          "А якщо раптом ти вирішиш негайно відправитись у невеличку пригоду, а навушники виявляться розрядженими - не хвилюйся. Huawei Freebuds 4i здатні зарядитись для 4-годинної роботи всього за 10 хвилин. Ти якраз встигнеш зібрати рюкзак!",
+          "А якщо раптом ти вирішиш негайно відправитись у невеличку пригоду, а навушники виявляться розрядженими - не хвилюйся. Huawei FreeBuds 4i здатні зарядитись для 4-годинної роботи всього за 10 хвилин. Ти якраз встигнеш зібрати рюкзак!",
       },
       resultThree: {
         paragrafOne:
-          "Ти вже далеко від початку, та попереду ще так багато невідомого! Ти добре знаєш, як звучить Україна, але є ще чимало місць, які слід відвідати. Годі зволікати! Вирушай у подорож до нових відкриттів разом з Huawei Freebuds 4i. Це навушники, які стануть найкращим компаньйоном у твоїй подорожі, адже вони можуть працювати без підзарядки до десяти годин! Якраз вистачить для того, щоб доїхати до тих місць, де ти ще не встиг побувати! ",
+          "Ти вже далеко від початку, та попереду ще так багато невідомого! Ти добре знаєш, як звучить Україна, але є ще чимало місць, які слід відвідати. Годі зволікати! Вирушай у подорож до нових відкриттів разом з Huawei FreeBuds 4i. Це навушники, які стануть найкращим компаньйоном у твоїй подорожі, адже вони можуть працювати без підзарядки до десяти годин! Якраз вистачить для того, щоб доїхати до тих місць, де ти ще не встиг побувати! ",
         paragrafTwo:
-          "Крім того, Huawei Freebuds 4i містять функцію шумозаглушення, тому, навіть якщо у потязі чи автобусі тобі трапляться галасливі сусіди - навушники врятують твій спокій. ",
+          "Крім того, Huawei FreeBuds 4i містять функцію шумозаглушення, тому, навіть якщо у потязі чи автобусі тобі трапляться галасливі сусіди - навушники врятують твій спокій. ",
       },
       resultFour: {
         paragrafOne:
-          "Ти вже на рівні Птушкіна! І дуже добре знаєш, як звучить Україна! Проте ми впевнені, що вона ще зможе тебе здивувати! Наша порада - обирай навушники Huawei Freebuds 4i, що працюють без підзарядки до 10 годин, тикай у рандомну точку на мапі України та відправляйся у дорогу. Повір, ненька ще має багато сюрпризів, щоб здивувати тебе!",
+          "Ти вже на рівні Птушкіна! І дуже добре знаєш, як звучить Україна! Проте ми впевнені, що вона ще зможе тебе здивувати! Наша порада - обирай навушники Huawei FreeBuds 4i, що працюють без підзарядки до 10 годин, тикай у рандомну точку на мапі України та відправляйся у дорогу. Повір, ненька ще має багато сюрпризів, щоб здивувати тебе!",
         paragrafTwo:
-          "Huawei Freebuds 4i однаково сумісні як з iOS, так і з Android. А ще вони автоматично підключаються до твого девайсу, одразу, як ти відкриєш кришку кейса.",
+          "Huawei FreeBuds 4i однаково сумісні як з iOS, так і з Android. А ще вони автоматично підключаються до твого девайсу, одразу, як ти відкриєш кришку кейса.",
       },
     };
   },
   components: {
     Popup,
+    PopupFinish,
   },
   mounted() {
     let resultNumber = this.$router.currentRoute.value.query.count;
-    if (resultNumber >= 20 && resultNumber <= 30) {
-      this.href =
-        "https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/shareTwo.html";
-      this.result = this.resultTwo;
-    } else if (resultNumber >= 40 && resultNumber <= 50) {
-      this.href =
-        "https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/shareThree.html";
-      this.result = this.resultThree;
-    } else if (resultNumber >= 60 && resultNumber <= 70) {
-      this.href =
-        "https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/shareFour.html";
-      this.result = this.resultFour;
+
+    this.href = this.createUrlShare(resultNumber);
+    switch (+resultNumber) {
+      case 10:
+        break;
+      case 20:
+        this.result = this.resultTwo;
+        break;
+      case 30:
+        this.result = this.resultTwo;
+        break;
+      case 40:
+        this.result = this.resultThree;
+        break;
+      case 50:
+        this.result = this.resultThree;
+        break;
+      case 60:
+        this.result = this.resultFour;
+        break;
+      case 70:
+        this.result = this.resultFour;
+        break;
+      default:
     }
 
     if (this.$router.currentRoute.value.query.count) {
@@ -100,13 +109,19 @@ export default {
     }
   },
   methods: {
-    analiticsShare() {
-      console.log("hhh");
-      this.$gtag.event("click", {
-        event_category: "huawei",
-        event_label: "b_2",
-      });
+    createUrlShare(result) {
+      return `https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/share-${
+        result / 10
+      }.html`;
     },
+    openShare() {
+      this.share = true;
+    },
+    closeShare() {
+      this.share = false;
+      this.takePart = false;
+    },
+
     analiticsPlayAgain() {
       this.$gtag.event("click", {
         event_category: "huawei",
@@ -181,30 +196,10 @@ export default {
   }
   &__btns {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     @media (max-width: 600px) {
       flex-direction: column;
       align-items: center;
-    }
-  }
-  &__btn {
-    &-share {
-      background: #1877f2;
-      position: relative;
-      @media (max-width: 600px) {
-        flex-direction: column;
-        margin-bottom: 15px;
-      }
-      &::before {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 20px;
-        background: url("../assets/images/share.svg") center no-repeat;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 28%;
-      }
     }
   }
 }
