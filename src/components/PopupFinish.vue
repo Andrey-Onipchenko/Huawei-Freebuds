@@ -33,7 +33,6 @@ export default {
       this.$emit("closeShare");
     },
     analiticsShare() {
-      console.log("hhh");
       this.$gtag.event("click", {
         event_category: "huawei",
         event_label: "b_2",

@@ -40,10 +40,6 @@
           alt="submit"
         />
       </button>
-      <p class="popup__submit-subtext">
-        Не забудьте зробити шер результату на власній сторінці у соцмережі
-        Facebook, це умова участі у розіграші
-      </p>
       <p class="popup__error">{{ error }}</p>
     </div>
   </div>
@@ -203,10 +199,6 @@ export default {
       margin-left: 10px;
       opacity: 0;
       transition: all 500ms ease;
-    }
-    &-subtext {
-      text-align: center;
-      font-size: 10px;
     }
   }
   &__error {

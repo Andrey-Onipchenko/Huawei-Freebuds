@@ -27,6 +27,16 @@
         <PopupFinish v-if="share" :href="href" v-on:closeShare="closeShare" />
       </div>
     </div>
+    <a
+      class="result__share-fb"
+      @click="analiticsShare()"
+      href="https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/index.html"
+      target="_blank"
+      ><img
+        class="result__share-fb-img"
+        src="../assets/images/share-fb.svg"
+        alt="facebook"
+    /></a>
   </div>
 </template>
 
@@ -37,15 +47,15 @@ export default {
   name: "Result",
   data() {
     return {
-      href: "https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/shareOne.html",
+      href: "",
       answer: 0,
       share: false,
       takePart: true,
       result: {
         paragrafOne:
-          "Ти тільки на шляху до нових відкриттів! Не засмучуйся! Нехай зараз ти ще  не знаєш, як звучить вся Україна, але ми впевнені, ти точно усе  надолужиш. Особливо, якщо ти матимеш навушники Huawei FreeBuds 4i, адже з ними так приємно подорожувати! Їхнього заряду вистачає на 10 годин  безперервної роботи, а цього часу цілком достатньо, щоб дістатися до іншого міста!",
+          "Ти лише на початку відкриттів, але добре знаєшся на рідних краях! Нехай поки що ти не знаєш багато про всі міста, головне, що початок покладено! Тепер залишилось тільки купити новенькі Huawei FreeBuds 4i та вирушати в дорогу, щоб відкрити для себе нові горизонти до найгарніших та найцікавіших українських міст!",
         paragrafTwo:
-          "І звісно, підкорювати нові горизонти хочеться тільки у компанії гарних людей і речей. Люди - це за тобою, а от з Huawei FreeBuds 4i ти завжди матимеш під рукою зручний та сучасний девайс. З яким навіть натюрморт із  плакцартним обідом виглядатиме стильно.",
+          "Якщо раптом ти вирішиш негайно вирушити у невеличку пригоду, а навушники виявились розрядженими — не хвилюйся. Huawei FreeBuds 4i здатні зарядитись для 4-годинної роботи всього за 10 хвилин. Ти якраз встигнеш зібрати рюкзак!",
       },
       resultTwo: {
         paragrafOne:
@@ -61,9 +71,9 @@ export default {
       },
       resultFour: {
         paragrafOne:
-          "Ти вже на рівні Птушкіна! І дуже добре знаєш, як звучить Україна! Проте ми впевнені, що вона ще зможе тебе здивувати! Наша порада - обирай навушники Huawei FreeBuds 4i, що працюють без підзарядки до 10 годин, тикай у рандомну точку на мапі України та відправляйся у дорогу. Повір, ненька ще має багато сюрпризів, щоб здивувати тебе!",
+          "Ти вже на рівні Птушкіна! І дуже добре знаєш, як звучить Україна! Проте ми впевнені, що вона ще зможе тебе здивувати! Наша порада — обирай навушники Huawei FreeBuds 4i, що працюють без підзарядки до 10 годин, тицяй у рандомну точку на мапі України та вирушай у дорогу. Повір, ненька ще має багато сюрпризів, які здивують тебе!",
         paragrafTwo:
-          "Huawei FreeBuds 4i однаково сумісні як з iOS, так і з Android. А ще вони автоматично підключаються до твого девайсу, одразу, як ти відкриєш кришку кейса.",
+          "Huawei FreeBuds 4i сумісні як з Android, так і з iOS. Натисни бічну кнопку на кейсі навушників і твій гаджет побачить Huawei FreeBuds 4i серед пристроїв для підключення по Bluetoоth.",
       },
     };
   },
@@ -76,8 +86,6 @@ export default {
 
     this.href = this.createUrlShare(resultNumber);
     switch (+resultNumber) {
-      case 10:
-        break;
       case 20:
         this.result = this.resultTwo;
         break;
@@ -110,7 +118,7 @@ export default {
   },
   methods: {
     createUrlShare(result) {
-      return `https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/share-${
+      return `https://www.facebook.com/sharer.php?u=https://huawei.vgorode.ua/share/share-${
         result / 10
       }.html`;
     },
@@ -121,7 +129,12 @@ export default {
       this.share = false;
       this.takePart = false;
     },
-
+    analiticsShare() {
+      this.$gtag.event("click", {
+        event_category: "huawei",
+        event_label: "b_2",
+      });
+    },
     analiticsPlayAgain() {
       this.$gtag.event("click", {
         event_category: "huawei",
@@ -200,6 +213,14 @@ export default {
     @media (max-width: 600px) {
       flex-direction: column;
       align-items: center;
+    }
+  }
+  &__share-fb {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    &-img {
+      max-width: 50px;
     }
   }
 }
