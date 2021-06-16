@@ -36,7 +36,7 @@
     <div class="steap">
       <div class="steap__item">
         <h4 class="steap__title">крок 1</h4>
-        <p class="steap__text">Визначай міста України за їх звучанням</p>
+        <p class="steap__text">Визначай міста України за їх звучанням.</p>
       </div>
       <div class="steap__item">
         <h4 class="steap__title">крок 2</h4>
