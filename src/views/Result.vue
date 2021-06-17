@@ -14,7 +14,7 @@
       <p class="result__text text-bold result__again">Пройти тест ще раз</p>
       <h3 class="result__title text-bold">
         {{ answer }}
-        {{ answer === 1 ? "вірна відповідь" : "вірних відповідей" }}
+        {{ answerText }}
       </h3>
       <p class="result__text result__text-paragraf">
         {{ result.paragrafOne }}
@@ -49,6 +49,7 @@ export default {
     return {
       href: "",
       answer: 0,
+      answerText: "правильних відповідей",
       share: false,
       takePart: true,
       result: {
@@ -86,25 +87,35 @@ export default {
 
     this.href = this.createUrlShare(resultNumber);
     switch (+resultNumber) {
+      case 10:
+        this.answerText = "правильна відповідь";
+        break;
       case 20:
         this.result = this.resultTwo;
+        this.answerText = "правильні відповіді";
         break;
       case 30:
         this.result = this.resultTwo;
+        this.answerText = "правильні відповіді";
         break;
       case 40:
         this.result = this.resultThree;
+        this.answerText = "правильні відповіді";
         break;
       case 50:
         this.result = this.resultThree;
+        this.answerText = "правильних відповідей";
         break;
       case 60:
         this.result = this.resultFour;
+        this.answerText = "правильних відповідей";
         break;
       case 70:
         this.result = this.resultFour;
+        this.answerText = "правильних відповідей";
         break;
       default:
+        this.answerText = "правильних відповідей";
     }
 
     if (this.$router.currentRoute.value.query.count) {
