@@ -31,10 +31,10 @@
               class="feature__line-left-top"
               @click="featureOpen('leftTop')"
             ></div>
-            <div
+            <!-- <div
               class="feature__line-left-top-mobile"
               @click="featureOpen('leftTop')"
-            ></div>
+            ></div> -->
 
             <div
               class="feature__line-left-center"
@@ -385,31 +385,35 @@ export default {
         height: 30px;
         background: url("../assets/images/circle.svg") center no-repeat;
         background-size: contain;
-        top: 150px;
+        top: 140px;
         right: auto;
-        left: 155px;
+        left: 235px;
       }
       @media (max-width: 600px) {
+        top: 30%;
+        left: 46%;
+      }
+      @media (max-width: 375px) {
         top: 32%;
-        left: 28%;
+        left: 45%;
       }
-      &-mobile {
-        display: none;
-        @media (max-width: 1024px) {
-          display: block;
-          position: absolute;
-          top: 150px;
-          right: 160px;
-          width: 30px;
-          height: 30px;
-          background: url("../assets/images/circle.svg") center no-repeat;
-          background-size: contain;
-        }
-        @media (max-width: 600px) {
-          top: 32%;
-          right: 29%;
-        }
-      }
+      // &-mobile {
+      //   display: none;
+      //   @media (max-width: 1024px) {
+      //     display: block;
+      //     position: absolute;
+      //     top: 150px;
+      //     right: 160px;
+      //     width: 30px;
+      //     height: 30px;
+      //     background: url("../assets/images/circle.svg") center no-repeat;
+      //     background-size: contain;
+      //   }
+      //   @media (max-width: 600px) {
+      //     top: 32%;
+      //     right: 29%;
+      //   }
+      // }
     }
     &-left-center {
       position: absolute;
