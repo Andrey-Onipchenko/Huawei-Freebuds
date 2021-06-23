@@ -397,23 +397,6 @@ export default {
         top: 32%;
         left: 45%;
       }
-      // &-mobile {
-      //   display: none;
-      //   @media (max-width: 1024px) {
-      //     display: block;
-      //     position: absolute;
-      //     top: 150px;
-      //     right: 160px;
-      //     width: 30px;
-      //     height: 30px;
-      //     background: url("../assets/images/circle.svg") center no-repeat;
-      //     background-size: contain;
-      //   }
-      //   @media (max-width: 600px) {
-      //     top: 32%;
-      //     right: 29%;
-      //   }
-      // }
     }
     &-left-center {
       position: absolute;

@@ -2,7 +2,10 @@
   <div class="main">
     <div class="container container_small">
       <div class="logo">
-        <a href="https://consumer.huawei.com/ua/" target="_blank">
+        <a
+          href="https://consumer.huawei.com/ua/audio/freebuds4i/?utm_source=vgorode"
+          target="_blank"
+        >
           <img
             class="logo__huawei"
             src="../assets/images/logo__huawei.png"
@@ -15,7 +18,6 @@
             alt=""
         /></a>
       </div>
-      <!-- <img class="logo" src="../assets/images/logo.png" alt="logo" /> -->
       <h4 class="main__test">тест</h4>
       <h1 class="title">Як звучить Україна</h1>
       <h2 class="subtitle">
