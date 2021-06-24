@@ -1,22 +1,25 @@
 <template>
   <div class="main">
     <div class="container container_small">
-      <div class="logo">
-        <a
-          href="https://consumer.huawei.com/ua/audio/freebuds4i/?utm_source=vgorode"
-          target="_blank"
-        >
-          <img
-            class="logo__huawei"
-            src="../assets/images/logo__huawei.png"
-            alt=""
-        /></a>
-        <a href="https://vgorode.ua/" target="_blank">
-          <img
-            class="logo__vgorode"
-            src="../assets/images/logo__vgorode.png"
-            alt=""
-        /></a>
+      <div class="header">
+        <div class="logo">
+          <a
+            href="https://consumer.huawei.com/ua/audio/freebuds4i/?utm_source=vgorode"
+            target="_blank"
+          >
+            <img
+              class="logo__huawei"
+              src="../assets/images/logo__huawei.png"
+              alt=""
+          /></a>
+          <a href="https://vgorode.ua/" target="_blank">
+            <img
+              class="logo__vgorode"
+              src="../assets/images/logo__vgorode.png"
+              alt=""
+          /></a>
+        </div>
+        <a class="main__test" href="">правила</a>
       </div>
       <h4 class="main__test">тест</h4>
       <h1 class="title">Як звучить Україна</h1>
@@ -75,6 +78,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .logo {
   margin: 40px 0 46px;
   @media (max-width: 1600px) {

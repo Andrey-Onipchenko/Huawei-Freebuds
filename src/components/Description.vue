@@ -4,7 +4,11 @@
     <div class="container">
       <Test />
       <h2 class="description__title">
-        <span class="text-bold">Huawei</span> FreeBuds 4i
+        <a
+          href="https://consumer.huawei.com/ua/audio/freebuds4i/?utm_source=vgorode"
+          target="_blank"
+          ><span class="text-bold">Huawei</span> FreeBuds 4i</a
+        >
       </h2>
       <div class="feature">
         <div class="feature__row">
@@ -230,6 +234,8 @@ export default {
     line-height: 75px;
     text-align: center;
     color: #000000;
+    position: relative;
+    z-index: 1;
     @media (max-width: 1366px) {
       font-size: 58px;
       line-height: 64px;

@@ -151,7 +151,7 @@ export default {
     analiticsPlayAgain() {
       this.$gtag.event("click", {
         event_category: "huawei",
-        event_label: "b_4",
+        event_label: "b_5",
       });
     },
   },
