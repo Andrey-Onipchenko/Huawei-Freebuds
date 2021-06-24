@@ -1,3 +1,9 @@
+.is-mobile {
+  display: none !important;
+  @media (max-width: 600px) {
+    display: block !important;
+  }
+}
 .container {
   max-width: 1530px;
   width: 100%;
@@ -14,7 +20,7 @@
       height: 87%;
     }
     @media (max-width: 600px) {
-      max-height: 85vh;
+      max-height: 95vh;
       height: 100%;
     }
   }
@@ -84,5 +90,29 @@
     align-items: center;
     font-size: 18px;
     line-height: 21px;
+  }
+}
+
+.arrow-down {
+  display: block;
+  margin: 0 auto;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  @media (max-height: 650px) {
+    display: none !important;
+  }
+  &__img {
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    max-width: 100px;
+    height: 100px;
+    bottom: 0;
+    transition: all 0.5s ease-in-out;
+    animation-duration: 1s;
+    animation-name: arrowDown;
+    animation-iteration-count: infinite;
   }
 }

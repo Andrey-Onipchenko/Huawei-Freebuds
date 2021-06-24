@@ -49,6 +49,14 @@
             </div>
             <div class="slide__count">{{ step }}/7</div>
           </div>
+          <div class="arrow-down is-mobile">
+            <a href="#desc">
+              <img
+                class="arrow-down__img"
+                src="../assets/images/down-arrow.svg"
+                alt=""
+            /></a>
+          </div>
         </div>
       </div>
     </div>
@@ -294,6 +302,9 @@ export default {
     padding-top: 150px;
     margin-bottom: 60px;
   }
+  @media (min-height: 667px) {
+    padding-top: 0;
+  }
   @media (max-width: 350px) {
     padding-top: 50px;
   }
@@ -414,6 +425,9 @@ export default {
     font-family: "Huawei Bold", sans-serif;
     color: #fff;
     margin-bottom: 100px;
+    @media (max-width: 600px) {
+      margin-bottom: 0;
+    }
   }
 }
 @keyframes pulse-white {

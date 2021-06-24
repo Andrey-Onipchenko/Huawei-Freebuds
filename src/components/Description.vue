@@ -3,7 +3,7 @@
     <div class="description__bg" ref="descriptionBg"></div>
     <div class="container">
       <Test />
-      <h2 class="description__title">
+      <h2 class="description__title" id="desc">
         <a
           href="https://consumer.huawei.com/ua/audio/freebuds4i/?utm_source=vgorode"
           target="_blank"

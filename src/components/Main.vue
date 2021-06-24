@@ -37,8 +37,16 @@
       <a class="main__link" href="#testScroll" @click="analitics()"
         >Перевірити себе</a
       >
+      <div class="arrow-down is-mobile">
+        <a href="#steap">
+          <img
+            class="arrow-down__img"
+            src="../assets/images/down-arrow.svg"
+            alt=""
+        /></a>
+      </div>
     </div>
-    <div class="steap">
+    <div class="steap" id="steap">
       <div class="steap__item">
         <h4 class="steap__title">крок 1</h4>
         <p class="steap__text">Визначай міста України за їх звучанням.</p>
@@ -77,7 +85,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .header {
   display: flex;
   justify-content: space-between;
@@ -99,7 +107,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
   }
   &__huawei {
     margin-right: 30px;
@@ -249,6 +257,17 @@ export default {
     font-weight: bold;
     font-size: 18px;
     line-height: 21px;
+  }
+}
+@keyframes arrowDown {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: -30px;
+  }
+  100% {
+    bottom: 0;
   }
 }
 </style>
