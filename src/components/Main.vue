@@ -19,7 +19,7 @@
               alt=""
           /></a>
         </div>
-        <a class="main__test" href="">правила</a>
+        <a class="main__rules" href="">правила</a>
       </div>
       <h4 class="main__test">тест</h4>
       <h1 class="title">Як звучить Україна</h1>
@@ -128,7 +128,8 @@ export default {
     background-size: cover;
     height: 100vh;
   }
-  &__test {
+  &__test,
+  &__rules {
     font-family: "Huawei Bold", sans-serif;
     font-weight: bold;
     font-size: 36px;
@@ -140,8 +141,16 @@ export default {
       line-height: 32px;
     }
     @media (max-width: 600px) {
+      color: #fff;
       font-size: 36px;
       line-height: 42px;
+    }
+  }
+  &__rules {
+    @media (max-width: 600px) {
+      font-size: 26px;
+      line-height: 32px;
+      color: #8d8d8d;
     }
   }
   &__text {

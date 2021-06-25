@@ -283,7 +283,10 @@ export default {
   height: 630px;
   background: url("../assets/images/test_bg.png") no-repeat;
   margin-bottom: 150px;
-  padding-top: 230px;
+  // padding-top: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -302,7 +305,7 @@ export default {
     padding-top: 150px;
     margin-bottom: 60px;
   }
-  @media (min-height: 667px) {
+  @media (max-width: 600px) and (min-height: 667px) {
     padding-top: 0;
   }
   @media (max-width: 350px) {
@@ -424,7 +427,7 @@ export default {
     text-align: center;
     font-family: "Huawei Bold", sans-serif;
     color: #fff;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
     @media (max-width: 600px) {
       margin-bottom: 0;
     }
