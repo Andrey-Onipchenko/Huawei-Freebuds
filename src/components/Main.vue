@@ -19,7 +19,12 @@
               alt=""
           /></a>
         </div>
-        <a class="main__rules" href="">правила</a>
+        <a
+          class="main__rules"
+          href="https://kiev.vgorode.ua/news/sobytyia/a1168063-pravila-uchasti-u-konkursi-jak-zvuchit-ukrajina"
+          target="_blank"
+          >правила</a
+        >
       </div>
       <h4 class="main__test">тест</h4>
       <h1 class="title">Як звучить Україна</h1>
@@ -146,7 +151,7 @@ export default {
     }
   }
   &__rules {
-     color: #8d8d8d;
+    color: #8d8d8d;
     @media (max-width: 600px) {
       font-size: 26px;
       line-height: 32px;

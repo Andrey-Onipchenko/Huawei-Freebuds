@@ -83,8 +83,6 @@ export default {
     PopupFinish,
   },
   mounted() {
-    this.$refs.paragrafOne.innerHTML = this.result.paragrafOne;
-
     let resultNumber = this.$router.currentRoute.value.query.count;
 
     this.href = this.createUrlShare(resultNumber);
@@ -119,6 +117,7 @@ export default {
       default:
         this.answerText = "правильних відповідей";
     }
+    this.$refs.paragrafOne.innerHTML = this.result.paragrafOne;
 
     if (this.$router.currentRoute.value.query.count) {
       this.answer = this.$router.currentRoute.value.query.count / 10;
