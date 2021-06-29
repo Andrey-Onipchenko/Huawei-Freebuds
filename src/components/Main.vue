@@ -134,23 +134,22 @@ export default {
     font-weight: bold;
     font-size: 36px;
     line-height: 42px;
-    color: #8d8d8d;
+    color: #fff;
     text-shadow: 0px 6px 9px rgba(0, 0, 0, 0.36);
     @media (max-width: 1366px) {
       font-size: 32px;
       line-height: 32px;
     }
     @media (max-width: 600px) {
-      color: #fff;
       font-size: 36px;
       line-height: 42px;
     }
   }
   &__rules {
+     color: #8d8d8d;
     @media (max-width: 600px) {
       font-size: 26px;
       line-height: 32px;
-      color: #8d8d8d;
     }
   }
   &__text {
