@@ -144,13 +144,13 @@ export default {
     analiticsShare() {
       this.$gtag.event("click", {
         event_category: "huawei",
-        event_label: "b_2",
+        event_label: "b_5",
       });
     },
     analiticsPlayAgain() {
       this.$gtag.event("click", {
         event_category: "huawei",
-        event_label: "b_5",
+        event_label: "b_4",
       });
     },
   },
