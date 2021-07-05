@@ -167,6 +167,9 @@ export default {
   justify-content: center;
   color: #fff;
   text-align: center;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
   @media (max-width: 350px) {
     align-items: flex-start;
   }
@@ -231,6 +234,10 @@ export default {
     position: fixed;
     bottom: 30px;
     right: 30px;
+    @media (max-width: 600px) {
+      position: static;
+      margin: 15px auto 0;
+    }
     &-img {
       max-width: 50px;
     }

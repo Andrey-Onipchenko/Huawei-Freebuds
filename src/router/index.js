@@ -12,6 +12,14 @@ const routes = [
     name: "Result",
     component: () => import("../views/Result.vue"),
   },
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: Home,
+    meta: {
+      requiresAuth: false,
+    },
+  },
 ];
 
 const router = createRouter({
