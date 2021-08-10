@@ -19,12 +19,20 @@
               alt=""
           /></a>
         </div>
-        <a
-          class="main__rules"
-          href="https://kiev.vgorode.ua/news/sobytyia/a1168063-pravila-uchasti-u-konkursi-jak-zvuchit-ukrajina"
-          target="_blank"
-          >правила</a
-        >
+        <div class="main__right">
+          <a
+            class="main__rules"
+            href="https://kiev.vgorode.ua/news/sobytyia/a1168063-pravila-uchasti-u-konkursi-jak-zvuchit-ukrajina"
+            target="_blank"
+            >правила</a
+          >
+          <a
+            class="main__rules"
+            href="https://kiev.vgorode.ua/news/sobytyia/a1172352-peremozhtsi-rozihrashu-v-proekti-jak-zvuchit-ukrajina-vid-huawei"
+            target="_blank"
+            >переможці</a
+          >
+        </div>
       </div>
       <h4 class="main__test">тест</h4>
       <h1 class="title">Як звучить Україна</h1>
@@ -132,6 +140,10 @@ export default {
     background: url("../assets/images/main__bg-mob.png") center no-repeat;
     background-size: cover;
     height: 100vh;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
   }
   &__test,
   &__rules {
